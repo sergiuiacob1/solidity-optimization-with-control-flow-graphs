@@ -1,0 +1,92 @@
+\documentclass[12pt]{report}
+
+% includes
+\usepackage{listings}           % for inline code
+\usepackage{geometry}           % page size
+\usepackage[utf8]{inputenc}     % encoding
+\usepackage{palatino}           % font
+\usepackage[english]{babel}     % language
+\usepackage{graphicx}           % images
+\usepackage{indentfirst}        % indentation
+\usepackage[nottoc]{tocbibind}  % table of contents style
+\usepackage[unicode]{hyperref}  % references from the table of contents
+\usepackage{xcolor}             % to define colors
+
+
+% includes options
+\geometry{  a4paper,            % scientific thesis standard
+            left=3cm,
+            right=2cm,
+            top=2cm,
+            bottom=2cm,
+ }
+\graphicspath{{images/}}        % path where the images are located
+\setlength{\parindent}{1cm}     % paragraph indentation
+
+% other options
+\linespread{1.5}                % space between lines
+\renewcommand*\contentsname{Cuprins}    % table of contents name
+
+\setlength{\parindent}{1cm}     % paragraph indentation
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+
+% the document content
+\begin{document}
+    % macros (global)
+    \input{front/macros}
+    
+    % front-matter
+    \pagenumbering{gobble}
+    
+    \input{front/cover}
+    \input{front/titlepage}
+    % \input{front/declaration1}
+    % \input{front/declaration2}
+    
+    % table of contents
+    \tableofcontents
+    
+    \cleardoublepage
+    % \phantomsection
+    \addcontentsline{toc}{chapter}{\listfigurename}
+    \listoffigures
+    
+    % chapters
+    \setcounter{page}{1}
+    \pagenumbering{arabic}
+    
+    \input{chapters/motivation}
+    % \input{chapters/introduction}
+    
+    \input{chapters/chapter1}
+    \input{chapters/chapter2}
+    
+    \input{chapters/draft}
+
+    \input{chapters/conclusions}
+    \input{chapters/bibliography}
+\end{document}

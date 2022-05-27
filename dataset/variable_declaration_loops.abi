@@ -1,0 +1,4 @@
+
+======= variable_declaration_loops.sol:VariableLoop =======
+Contract JSON ABI
+[{"inputs":[],"name":"declareVariableInsideLoop","outputs":[],"stateMutability":"pure","type":"function"},{"inputs":[],"name":"declareVariableOutsideLoop","outputs":[],"stateMutability":"pure","type":"function"}]

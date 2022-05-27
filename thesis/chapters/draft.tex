@@ -62,23 +62,37 @@ in this case, outside consumes more gas
 
 200 optimization runs did not change anything
 
+> DISPATCH GAS!!!
+
 
 
 Resurse utile
 * https://homepages.dcc.ufmg.br/~fernando/classes/dcc888/ementa/
 * https://etherscan.io/contractsVerified
   * statistici cu cat \% din contracte folosesc solc 0.8
-
+* tool vizualizare relatii functii din contracte https://piet.blockchains.com/?container=examples%2Fexport1562664060589.piet.json 
 
 De adaugat in prezentare
-* detaliu: Ethereum blockchain only stores EVM bytecode, so the high level code needs to be optimized before turned into EVM, of course
-* https://eprints.ucm.es/id/eprint/61812/1/HERNANDEZ_CEREZO_Tecnicas_de_analisis_para_contratos_inteligentes_generacion_de_grafos_de_control_de_flujo_completos_4398577_720285146.pdf     <------------- tool care imbunatateste Oyente / EthIR si gaseste security flaws. poate fi aplicat pe codul pe care il generez eu
-* optimizer passes (etape): pot fi platform independent / dependent
-* optimizari facute pe baza YUL, example: function inlining https://www.youtube.com/watch?v=VH4MgZDyZJU&ab_channel=EthereumFoundation
-* despre cum CFG-urile sunt folosite: "Gastap is one of the few tools based on static analysis that manages to infer gas upper
-bounds for transactions. Gastap is one of the most accurate tools in the field, having a
-great success rate. It generates a Control-Flow-Graph (CFG) as an intermediate representation of the analysis. However, the current algorithm used by Gastap is not precise.
-Therefore, a considerable number of smart contracts cannot be analyzed." din https://eprints.ucm.es/id/eprint/61812/1/HERNANDEZ_CEREZO_Tecnicas_de_analisis_para_contratos_inteligentes_generacion_de_grafos_de_control_de_flujo_completos_4398577_720285146.pdf
+Proces dezvoltare dizertatie
+* Problema: se lucra deja la multe dintre contributiile pe care le consideram sa le fac in solidity de persoane random. trebuia sa gasesc un "free slot" la lucrat la ceva
+
+Random stuff
+  * https://hrkrshnn.com/ prezentari
+  * despre patterns care sunt costly dpdv al gazului https://computerscience.unicam.it/marcantoni/tesi/Ethereum%20Smart%20Contracts%20Optimization.pdf
+  * despre completeness / corectness CFG https://eprints.ucm.es/id/eprint/61812/1/HERNANDEZ_CEREZO_Tecnicas_de_analisis_para_contratos_inteligentes_generacion_de_grafos_de_control_de_flujo_completos_4398577_720285146.pdf
+  * SIF: https://arxiv.org/pdf/1905.01659.pdf
+  * basic blocks, etc https://homepages.dcc.ufmg.br/~fernando/classes/dcc888/ementa/slides/ControlFlowGraphs.pdf
+  * dispatch gas difference (ce m-a indus pe mine in eroare) slide 11 din https://hrkrshnn.com/t/devconnect.pdf
+    * tot intr-una din prezentarile de aici zice ca "opcode optimization should be kept as simple as possible – engineering decision)
+  * detaliu: Ethereum blockchain only stores EVM bytecode, so the high level code needs to be optimized before turned into EVM, of course
+  * https://eprints.ucm.es/id/eprint/61812/1/HERNANDEZ_CEREZO_Tecnicas_de_analisis_para_contratos_inteligentes_generacion_de_grafos_de_control_de_flujo_completos_4398577_720285146.pdf     <------------- tool care imbunatateste Oyente / EthIR si gaseste security flaws. poate fi aplicat pe codul pe care il generez eu
+  * optimizer passes (etape): pot fi platform independent / dependent
+  * optimizari facute pe baza YUL, example: function inlining https://www.youtube.com/watch?v=VH4MgZDyZJU&ab_channel=EthereumFoundation
+  * despre cum CFG-urile sunt folosite: "Gastap is one of the few tools based on static analysis that manages to infer gas upper
+  bounds for transactions. Gastap is one of the most accurate tools in the field, having a
+  great success rate. It generates a Control-Flow-Graph (CFG) as an intermediate representation of the analysis. However, the current algorithm used by Gastap is not precise.
+  Therefore, a considerable number of smart contracts cannot be analyzed." din https://eprints.ucm.es/id/eprint/61812/1/HERNANDEZ_CEREZO_Tecnicas_de_analisis_para_contratos_inteligentes_generacion_de_grafos_de_control_de_flujo_completos_4398577_720285146.pdf
+  * alte moduri in care lumea interpreteaza cod solidity, ex asta cu XML-uri ca sa foloseasca query-uri XPath apoi https://orbilu.uni.lu/bitstream/10993/35862/3/smartcheck-paper.pdf
 
 
 
@@ -114,10 +128,12 @@ Idei cu ce pot face
 * dead code elimination (https://homepages.dcc.ufmg.br/~fernando/classes/dcc888/ementa/slides/ControlFlowGraphs.pdf)
   * ca pas intr-un CI
 * izolarea codului – cred ca daca iau toate variabilele si le izolez (gen ce e folosit intr-un if sa fie definit acolo) etc. atunci o sa consume mai putin gas
-  
 * pentru a-mi testa softul: idei in capitolul 8.1 din https://eprints.ucm.es/id/eprint/61812/1/HERNANDEZ_CEREZO_Tecnicas_de_analisis_para_contratos_inteligentes_generacion_de_grafos_de_control_de_flujo_completos_4398577_720285146.pdf
+* ma pot intepa in StructuralSimplifier + Dataflow Analyzer deja existente in solc
 
 Optimizari deja facute de solc
+* LoopInvariantCodeMotion – ce vreau eu sa fac de fapt https://docs.soliditylang.org/en/v0.8.14/internals/optimizer.html#loopinvariantcodemotion
+  * "variable declarations inside conditional branches will not be moved out of the loop" <- posibilitate de improvement
 * Local common subexpression eliminator
 * citat din doc oficial: "specializes or inlines functions" (probabil on in loc de or)
   * todo aici, de aratat un exemplu pe YUL direct, inlined vs uninlined (--optimize --ir-optimized versus --ir)

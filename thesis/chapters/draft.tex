@@ -66,15 +66,64 @@ in this case, outside consumes more gas
 
 
 
+
+
+
+
+TODOs
+* test cu persistent var
+* TODO ce se intampla daca am acelasi assignment si in outer scope, si in block scope?
+* acelasi gen aceeasi_var = aceeasi_val
+* pe termination3.sol
+  * exemplu ce se intampla cand rulez doar 'Dru'
+  * exemplu cum se simplifica si mai mult (datorita static analysis) cand rulez toata suita de optimizatori
+
+
+
+
+Important
+* In YUL IR, pot fi instructiuni dupa o instructiune de leave!!!
+  * Rezolvat de DeadCodeEliminator
+* NU SCOATE assign-ment-urile pentru state variables!!!
+
+
 Resurse utile
+* tips n tricks cu YULs, poate e ceva de folos: https://hackmd.io/@gn56kcRBQc6mOi7LCgbv1g/rJez8O8st
 * https://homepages.dcc.ufmg.br/~fernando/classes/dcc888/ementa/
 * https://etherscan.io/contractsVerified
   * statistici cu cat \% din contracte folosesc solc 0.8
 * tool vizualizare relatii functii din contracte https://piet.blockchains.com/?container=examples%2Fexport1562664060589.piet.json 
 
+
+De adaugat in teza
+* What is Data Flow Analysis?
+* function dispatch table <- gas dispatch issue I've had
+
+  * The DataFlowAnalyzer currently does not deal with the ``leave`` statement. This is because
+  * it only matters at the end of a function body, which is a point in the code a derived class
+  * can not easily deal with.
+  ^ Asta scrie in DataFlowAnalyzer.h
+* am folosit truffle framework pentru a calcula gas usage-ul in experimentele mele (care ele este doar 1)
+* toate variantele pe care le poate lua un assignment
+
+
 De adaugat in prezentare
+* Solidity Summit 2022 – merge la bibliografie I guess.
+* https://meet.ethereum.org/solidity – asking questions here. How to make a difference?
+* Scheme
+  * optimization pipeline (cod solidity -> YUL IR -> YUL optimizer -> EVM Bytecode -> EVM Optimizer (LLVM???) -> bytecode)
+* Ce este un dialect. Despre EVM Dialect (folosit de Yul IR)
+* cum functioneaza UAE: in documentatie scrie https://docs.soliditylang.org/en/v0.8.14/internals/optimizer.html#redundantassigneliminator
+* Despre ce e un AST. Solidity foloseste ANTLR – https://medium.com/@obernardovieira/why-is-ast-so-important-b1e7d6c29260
 Proces dezvoltare dizertatie
 * Problema: se lucra deja la multe dintre contributiile pe care le consideram sa le fac in solidity de persoane random. trebuia sa gasesc un "free slot" la lucrat la ceva
+* Cat de mult ajuta UAE? Experiment cu deployment pt un contract, o functie simpla. Cu si fara optimizarea UAE. DOAR CU ACEEEA!!! Cat gaz se salveaza?
+* Am vrut sa imbunatatesc UAE pe AST-ul de pe Solidity – dar dupa o discutie cu echipa Solidity, mi-au clarificat ca optimizarile ar trebui facute pe YUL IR – care are si el un AST, doar ca nu e outputted, e in code base ---> mai dificil
+* https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.453.4245&rep=rep1&type=pdf 
+* Fuzzing tests – trying to break the compiler with Etherscan
+* default optimization suite de fapt nu e aia prezentata in documentatie – e outdated
+  * 'dhfoDgvulfnTUtnIf[xa[r]EscLMcCTUtTOntnfDIulLculVcul [j]Tpeulxa[rul]xa[r]cLgvifCTUca[r]LSsTFOtfDnca[r]Iulc]jmul[jul] VcTOcul jmul'
+  * asta pare sa fie... printre altele
 
 Random stuff
   * https://hrkrshnn.com/ prezentari
@@ -97,10 +146,13 @@ Random stuff
 
 
 Misc stuff
-* adaugat screenshot cu llvm-opt --help (optimizarile pe care le poate face0
+* adaugat screenshot cu llvm-opt --help (optimizarile pe care le poate face)
 * de vorbit despre ce e "--optimize-runs" (scrie in doc oficial). trade off intre code size / code efficiency
 * Simple Inlining a fost adaugat in solidity 0.8.2!!! super recent
 * YUL optimizer: "The optimizer currently follows a purely greedy strategy and does not do any backtracking."
+* Issues gasite in timp ce lucram la dizertatie
+  * cand se construieste AST (--ast-compact-json), la pgrama valoarea pentru "src" nu e corecta, gen de unde pana unde tine codul pt pragma directive
+* de folosit un tool online si de aratat cum functioneaza UAE (solc --optimize --ir-optimized --via-ir --yul-optimizations 'r'  termination.sol | pbcopy), o data cu '' si o data cu 'r'    –   https://text-compare.com/
 
 Proprietati noduri CFG
 * The	flow	of	control	can	only	

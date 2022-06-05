@@ -9,3 +9,6 @@ dataset/*.ast
 node_modules
 truffle_project
 forge_project
+
+etherscan_api_key.txt
+etherscan_comparison

@@ -1,0 +1,17 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{List of Figures}{1}{chapter*.1}%
+\contentsline {chapter}{List of Figures}{1}{chapter*.2}%
+\contentsline {chapter}{Motivation}{2}{chapter*.3}%
+\contentsline {chapter}{Introducere}{3}{chapter*.5}%
+\contentsline {chapter}{Solidity}{4}{chapter*.6}%
+\contentsline {chapter}{YUL Intermediate Representation}{5}{chapter*.7}%
+\contentsline {chapter}{Control Flow Graphs}{7}{chapter*.9}%
+\contentsline {chapter}{Solidity Optimizer}{8}{chapter*.10}%
+\contentsline {chapter}{Control Flow Graphs Study Case}{9}{chapter*.12}%
+\contentsline {chapter}{\numberline {1}Solidity static analysis methods}{10}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Solidity Instrumentation Framework (SIF)}{10}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Slither}{11}{section.1.2}%
+\contentsline {chapter}{\numberline {2}Contributions}{12}{chapter.2}%
+\contentsline {chapter}{Benchmarking}{13}{chapter*.13}%
+\contentsline {chapter}{Conclusions}{15}{chapter*.15}%
+\contentsline {chapter}{Bibliography}{16}{chapter*.16}%

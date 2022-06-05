@@ -1,0 +1,643 @@
+am un ExpressionStatement
+am un VariableDeclaration
+let selector := shift_right_unsigned(calldataload(0))
+am un ExpressionStatement
+visiting block {
+    external_fun_assignBeforeTermination()
+}
+am gasit termination FlowOut
+am un ExpressionStatement
+visiting block { external_fun_f1() }
+am gasit termination FlowOut
+visiting block { }
+block has no statements
+visiting block {
+    let selector := shift_right_unsigned(calldataload(0))
+    switch selector
+    case 0x19679c44 {
+        external_fun_assignBeforeTermination()
+    }
+    case 0x9adbf691 { external_fun_f1() }
+    default { }
+}
+am gasit termination FlowOut
+am un If
+am un ExpressionStatement
+visiting block {
+    mstore(64, memoryguard(128))
+    if iszero(lt(calldatasize(), 4))
+    {
+        let selector := shift_right_unsigned(calldataload(0))
+        switch selector
+        case 0x19679c44 {
+            external_fun_assignBeforeTermination()
+        }
+        case 0x9adbf691 { external_fun_f1() }
+        default { }
+    }
+    revert_error_42b3090547df1d2001c96683413b8cf91c1b902ef5e3cb8d9f6f304cf7446f74()
+}
+am gasit termination FlowOut
+am un Assignment
+newValue := shr(224, value)
+visiting block { newValue := shr(224, value) }
+am gasit termination FlowOut
+am un FunctionDefinition
+am un Assignment
+memPtr := mload(64)
+visiting block { memPtr := mload(64) }
+am gasit termination FlowOut
+am un FunctionDefinition
+am un ExpressionStatement
+visiting block { revert(0, 0) }
+am gasit termination TERMINATE
+am un FunctionDefinition
+am un ExpressionStatement
+visiting block { revert(0, 0) }
+am gasit termination TERMINATE
+am un FunctionDefinition
+am un ExpressionStatement
+visiting block { revert(0, 0) }
+am gasit termination TERMINATE
+am un FunctionDefinition
+am un Assignment
+cleaned := value_1
+visiting block { cleaned := value_1 }
+am gasit termination FlowOut
+am un FunctionDefinition
+am un ExpressionStatement
+visiting block { revert(0, 0) }
+am gasit termination TERMINATE
+am un If
+visiting block {
+    if iszero(eq(value_2, cleanup_uint256(value_2))) { revert(0, 0) }
+}
+am gasit termination FlowOut
+am un FunctionDefinition
+am un Assignment
+value_3 := calldataload(offset)
+am un ExpressionStatement
+visiting block {
+    value_3 := calldataload(offset)
+    validator_revert_uint256(value_3)
+}
+am gasit termination FlowOut
+am un FunctionDefinition
+am un ExpressionStatement
+visiting block {
+    revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b()
+}
+am gasit termination FlowOut
+am un If
+am un VariableDeclaration
+let offset_4 := 0
+am un Assignment
+value0 := abi_decode_uint256(add(headStart, offset_4), dataEnd)
+visiting block {
+    if slt(sub(dataEnd, headStart), 32)
+    {
+        revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b()
+    }
+    let offset_4 := 0
+    value0 := abi_decode_uint256(add(headStart, offset_4), dataEnd)
+}
+am gasit termination FlowOut
+am un FunctionDefinition
+am un Assignment
+tail := add(headStart_5, 0)
+visiting block { tail := add(headStart_5, 0) }
+am gasit termination FlowOut
+am un FunctionDefinition
+am un ExpressionStatement
+visiting block {
+    revert_error_ca66f745a3ce8ff40e2ccaf1ad45db7774001b90d25810abd9040049be7bf4bb()
+}
+am gasit termination FlowOut
+am un If
+am un VariableDeclaration
+let param_0 := abi_decode_tuple_uint256(4, calldatasize())
+am un ExpressionStatement
+am un VariableDeclaration
+let memPos := allocate_unbounded()
+am un VariableDeclaration
+let memEnd := abi_encode_tuple(memPos)
+am un ExpressionStatement
+visiting block {
+    if callvalue()
+    {
+        revert_error_ca66f745a3ce8ff40e2ccaf1ad45db7774001b90d25810abd9040049be7bf4bb()
+    }
+    let param_0 := abi_decode_tuple_uint256(4, calldatasize())
+    fun_assignBeforeTermination(param_0)
+    let memPos := allocate_unbounded()
+    let memEnd := abi_encode_tuple(memPos)
+    return(memPos, sub(memEnd, memPos))
+}
+am gasit termination TERMINATE
+am un FunctionDefinition
+am un Assignment
+cleaned_7 := iszero(iszero(value_6))
+visiting block {
+    cleaned_7 := iszero(iszero(value_6))
+}
+am gasit termination FlowOut
+am un FunctionDefinition
+am un ExpressionStatement
+visiting block {
+    mstore(pos, cleanup_bool(value_8))
+}
+am gasit termination FlowOut
+am un FunctionDefinition
+am un Assignment
+tail_11 := add(headStart_9, 32)
+am un ExpressionStatement
+visiting block {
+    tail_11 := add(headStart_9, 32)
+    abi_encode_bool_to_bool(value0_10, add(headStart_9, 0))
+}
+am gasit termination FlowOut
+am un FunctionDefinition
+am un ExpressionStatement
+visiting block {
+    revert_error_ca66f745a3ce8ff40e2ccaf1ad45db7774001b90d25810abd9040049be7bf4bb()
+}
+am gasit termination FlowOut
+am un If
+am un VariableDeclaration
+let param := abi_decode_tuple_uint256(4, calldatasize())
+am un VariableDeclaration
+let ret_0 := fun_f1(param)
+am un VariableDeclaration
+let memPos_13 := allocate_unbounded()
+am un VariableDeclaration
+let memEnd_14 := abi_encode_bool(memPos_13, ret_0)
+am un ExpressionStatement
+visiting block {
+    if callvalue()
+    {
+        revert_error_ca66f745a3ce8ff40e2ccaf1ad45db7774001b90d25810abd9040049be7bf4bb()
+    }
+    let param := abi_decode_tuple_uint256(4, calldatasize())
+    let ret_0 := fun_f1(param)
+    let memPos_13 := allocate_unbounded()
+    let memEnd_14 := abi_encode_bool(memPos_13, ret_0)
+    return(memPos_13, sub(memEnd_14, memPos_13))
+}
+am gasit termination TERMINATE
+am un FunctionDefinition
+am un ExpressionStatement
+visiting block { revert(0, 0) }
+am gasit termination TERMINATE
+am un FunctionDefinition
+am un ExpressionStatement
+am un Assignment
+updated_pos := add(pos_15, 0x20)
+visiting block {
+    mstore(pos_15, length)
+    updated_pos := add(pos_15, 0x20)
+}
+am gasit termination FlowOut
+am un FunctionDefinition
+am un ExpressionStatement
+visiting block {
+    mstore(add(memPtr_16, 0), "assignBeforeTermination")
+}
+am gasit termination FlowOut
+am un FunctionDefinition
+am un Assignment
+pos_17 := array_storeLengthForEncoding_string(pos_17, 23)
+am un ExpressionStatement
+am un Assignment
+end_18 := add(pos_17, 32)
+visiting block {
+    pos_17 := array_storeLengthForEncoding_string(pos_17, 23)
+    store_literal_in_memory_3c4e1a1d2bacf0863f9a87b0ceb32a722191aacb4a607a424404ed0a2745822c(pos_17)
+    end_18 := add(pos_17, 32)
+}
+am gasit termination FlowOut
+am un FunctionDefinition
+am un Assignment
+tail_20 := add(headStart_19, 32)
+am un ExpressionStatement
+am un Assignment
+tail_20 := abi_encode_stringliteral_3c4e(tail_20)
+visiting block {
+    tail_20 := add(headStart_19, 32)
+    mstore(add(headStart_19, 0), sub(tail_20, headStart_19))
+    tail_20 := abi_encode_stringliteral_3c4e(tail_20)
+}
+am gasit termination FlowOut
+am un FunctionDefinition
+am un Assignment
+ret := 0
+visiting block { ret := 0 }
+am gasit termination FlowOut
+am un FunctionDefinition
+am un Assignment
+cleaned_22 := value_21
+visiting block { cleaned_22 := value_21 }
+am gasit termination FlowOut
+am un FunctionDefinition
+am un Assignment
+ret_24 := value_23
+visiting block { ret_24 := value_23 }
+am gasit termination FlowOut
+am un FunctionDefinition
+am un Assignment
+converted := cleanup_uint256(identity(cleanup_rational_by(value_25)))
+visiting block {
+    converted := cleanup_uint256(identity(cleanup_rational_by(value_25)))
+}
+am gasit termination FlowOut
+am un FunctionDefinition
+am un Assignment
+cleaned_27 := value_26
+visiting block { cleaned_27 := value_26 }
+am gasit termination FlowOut
+am un FunctionDefinition
+am un Assignment
+converted_29 := cleanup_uint256(identity(cleanup_t_rational_by(value_28)))
+visiting block {
+    converted_29 := cleanup_uint256(identity(cleanup_t_rational_by(value_28)))
+}
+am gasit termination FlowOut
+am un FunctionDefinition
+am un VariableDeclaration
+let _1 := 0xac7c932dfed5a12f8cee69b87b1db28759f9abab0760d37031670980a55a2168
+am un VariableDeclaration
+let _2 := allocate_unbounded()
+am un VariableDeclaration
+let _3 := abi_encode_tuple_stringliteral_3c4e(_2)
+am un ExpressionStatement
+am un VariableDeclaration
+let var_balance
+am un VariableDeclaration
+let zero_uint256 := zero_value_for_split_uint256()
+am un Assignment
+var_balance := zero_uint256
+am un VariableDeclaration
+let _5 := var_x_11
+am un VariableDeclaration
+let expr_22 := _5
+am un VariableDeclaration
+let expr_23 := fun_f1(expr_22)
+am un VariableDeclaration
+let expr_24 := 0x01
+am un VariableDeclaration
+let expr_25 := eq(cleanup_bool(expr_23), cleanup_bool(expr_24))
+am un VariableDeclaration
+let expr_27 := 0x2717
+am un VariableDeclaration
+let _6 := convert_t_rational_by_to_t_uint256(expr_27)
+am un Assignment
+var_balance := _6
+am un VariableDeclaration
+let expr_28 := _6
+visiting block {
+    let expr_27 := 0x2717
+    let _6 := convert_t_rational_by_to_t_uint256(expr_27)
+    var_balance := _6
+    let expr_28 := _6
+    leave
+}
+Am gasit un alt fel de termination
+am un If
+am un VariableDeclaration
+let _7 := var_balance
+am un VariableDeclaration
+let expr_33 := _7
+am un VariableDeclaration
+let expr := 0x00
+am un VariableDeclaration
+let expr_35 := eq(cleanup_uint256(expr_33), convert_rational_0_by_1_to_uint256(expr))
+am un VariableDeclaration
+let _8 := 0x757587e61c9ea391fd556c0cd9b59fb64ea23c21c63e92a104fac409fed38035
+am un VariableDeclaration
+let _9 := allocate_unbounded()
+am un VariableDeclaration
+let _10 := abi_encode_tuple(_9)
+am un ExpressionStatement
+visiting block {
+    let _8 := 0x757587e61c9ea391fd556c0cd9b59fb64ea23c21c63e92a104fac409fed38035
+    let _9 := allocate_unbounded()
+    let _10 := abi_encode_tuple(_9)
+    log1(_9, sub(_10, _9), _8)
+}
+am gasit termination FlowOut
+am un If
+visiting block {
+    let _1 := 0xac7c932dfed5a12f8cee69b87b1db28759f9abab0760d37031670980a55a2168
+    let _2 := allocate_unbounded()
+    let _3 := abi_encode_tuple_stringliteral_3c4e(_2)
+    log1(_2, sub(_3, _2), _1)
+    let var_balance
+    let zero_uint256 := zero_value_for_split_uint256()
+    var_balance := zero_uint256
+    let _5 := var_x_11
+    let expr_22 := _5
+    let expr_23 := fun_f1(expr_22)
+    let expr_24 := 0x01
+    let expr_25 := eq(cleanup_bool(expr_23), cleanup_bool(expr_24))
+    if expr_25
+    {
+        let expr_27 := 0x2717
+        let _6 := convert_t_rational_by_to_t_uint256(expr_27)
+        var_balance := _6
+        let expr_28 := _6
+        leave
+    }
+    let _7 := var_balance
+    let expr_33 := _7
+    let expr := 0x00
+    let expr_35 := eq(cleanup_uint256(expr_33), convert_rational_0_by_1_to_uint256(expr))
+    if expr_35
+    {
+        let _8 := 0x757587e61c9ea391fd556c0cd9b59fb64ea23c21c63e92a104fac409fed38035
+        let _9 := allocate_unbounded()
+        let _10 := abi_encode_tuple(_9)
+        log1(_9, sub(_10, _9), _8)
+    }
+    leave
+}
+Am gasit un alt fel de termination
+am un FunctionDefinition
+am un Assignment
+ret_30 := 0
+visiting block { ret_30 := 0 }
+am gasit termination FlowOut
+am un FunctionDefinition
+am un Assignment
+cleaned_32 := value_31
+visiting block { cleaned_32 := value_31 }
+am gasit termination FlowOut
+am un FunctionDefinition
+am un Assignment
+converted_34 := cleanup_uint256(identity(cleanup_rational_by_1(value_33)))
+visiting block {
+    converted_34 := cleanup_uint256(identity(cleanup_rational_by_1(value_33)))
+}
+am gasit termination FlowOut
+am un FunctionDefinition
+am un VariableDeclaration
+let zero_bool := zero_value_for_split_bool()
+am un Assignment
+var := zero_bool
+am un VariableDeclaration
+let _12 := var_x
+am un VariableDeclaration
+let expr_50 := _12
+am un VariableDeclaration
+let expr_51 := 0x0a
+am un VariableDeclaration
+let expr_52 := gt(cleanup_uint256(expr_50), convert_rational_by_to_uint256(expr_51))
+am un Assignment
+var := expr_52
+visiting block {
+    let zero_bool := zero_value_for_split_bool()
+    var := zero_bool
+    let _12 := var_x
+    let expr_50 := _12
+    let expr_51 := 0x0a
+    let expr_52 := gt(cleanup_uint256(expr_50), convert_rational_by_to_uint256(expr_51))
+    var := expr_52
+    leave
+}
+Am gasit un alt fel de termination
+am un FunctionDefinition
+visiting block {
+    {
+        mstore(64, memoryguard(128))
+        if iszero(lt(calldatasize(), 4))
+        {
+            let selector := shift_right_unsigned(calldataload(0))
+            switch selector
+            case 0x19679c44 {
+                external_fun_assignBeforeTermination()
+            }
+            case 0x9adbf691 { external_fun_f1() }
+            default { }
+        }
+        revert_error_42b3090547df1d2001c96683413b8cf91c1b902ef5e3cb8d9f6f304cf7446f74()
+    }
+    function shift_right_unsigned(value) -> newValue
+    { newValue := shr(224, value) }
+    function allocate_unbounded() -> memPtr
+    { memPtr := mload(64) }
+    function revert_error_ca66f745a3ce8ff40e2ccaf1ad45db7774001b90d25810abd9040049be7bf4bb()
+    { revert(0, 0) }
+    function revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b()
+    { revert(0, 0) }
+    function revert_error_c1322bf8034eace5e0b5c7295db60986aa89aae5e0ea0873e4689e076861a5db()
+    { revert(0, 0) }
+    function cleanup_uint256(value_1) -> cleaned
+    { cleaned := value_1 }
+    function validator_revert_uint256(value_2)
+    {
+        if iszero(eq(value_2, cleanup_uint256(value_2))) { revert(0, 0) }
+    }
+    function abi_decode_uint256(offset, end) -> value_3
+    {
+        value_3 := calldataload(offset)
+        validator_revert_uint256(value_3)
+    }
+    function abi_decode_tuple_uint256(headStart, dataEnd) -> value0
+    {
+        if slt(sub(dataEnd, headStart), 32)
+        {
+            revert_error_dbdddcbe895c83990c08b3492a0e83918d802a52331272ac6fdb6a7c4aea3b1b()
+        }
+        let offset_4 := 0
+        value0 := abi_decode_uint256(add(headStart, offset_4), dataEnd)
+    }
+    function abi_encode_tuple(headStart_5) -> tail
+    { tail := add(headStart_5, 0) }
+    function external_fun_assignBeforeTermination()
+    {
+        if callvalue()
+        {
+            revert_error_ca66f745a3ce8ff40e2ccaf1ad45db7774001b90d25810abd9040049be7bf4bb()
+        }
+        let param_0 := abi_decode_tuple_uint256(4, calldatasize())
+        fun_assignBeforeTermination(param_0)
+        let memPos := allocate_unbounded()
+        let memEnd := abi_encode_tuple(memPos)
+        return(memPos, sub(memEnd, memPos))
+    }
+    function cleanup_bool(value_6) -> cleaned_7
+    {
+        cleaned_7 := iszero(iszero(value_6))
+    }
+    function abi_encode_bool_to_bool(value_8, pos)
+    {
+        mstore(pos, cleanup_bool(value_8))
+    }
+    function abi_encode_bool(headStart_9, value0_10) -> tail_11
+    {
+        tail_11 := add(headStart_9, 32)
+        abi_encode_bool_to_bool(value0_10, add(headStart_9, 0))
+    }
+    function external_fun_f1()
+    {
+        if callvalue()
+        {
+            revert_error_ca66f745a3ce8ff40e2ccaf1ad45db7774001b90d25810abd9040049be7bf4bb()
+        }
+        let param := abi_decode_tuple_uint256(4, calldatasize())
+        let ret_0 := fun_f1(param)
+        let memPos_13 := allocate_unbounded()
+        let memEnd_14 := abi_encode_bool(memPos_13, ret_0)
+        return(memPos_13, sub(memEnd_14, memPos_13))
+    }
+    function revert_error_42b3090547df1d2001c96683413b8cf91c1b902ef5e3cb8d9f6f304cf7446f74()
+    { revert(0, 0) }
+    function array_storeLengthForEncoding_string(pos_15, length) -> updated_pos
+    {
+        mstore(pos_15, length)
+        updated_pos := add(pos_15, 0x20)
+    }
+    function store_literal_in_memory_3c4e1a1d2bacf0863f9a87b0ceb32a722191aacb4a607a424404ed0a2745822c(memPtr_16)
+    {
+        mstore(add(memPtr_16, 0), "assignBeforeTermination")
+    }
+    function abi_encode_stringliteral_3c4e(pos_17) -> end_18
+    {
+        pos_17 := array_storeLengthForEncoding_string(pos_17, 23)
+        store_literal_in_memory_3c4e1a1d2bacf0863f9a87b0ceb32a722191aacb4a607a424404ed0a2745822c(pos_17)
+        end_18 := add(pos_17, 32)
+    }
+    function abi_encode_tuple_stringliteral_3c4e(headStart_19) -> tail_20
+    {
+        tail_20 := add(headStart_19, 32)
+        mstore(add(headStart_19, 0), sub(tail_20, headStart_19))
+        tail_20 := abi_encode_stringliteral_3c4e(tail_20)
+    }
+    function zero_value_for_split_uint256() -> ret
+    { ret := 0 }
+    function cleanup_rational_by(value_21) -> cleaned_22
+    { cleaned_22 := value_21 }
+    function identity(value_23) -> ret_24
+    { ret_24 := value_23 }
+    function convert_t_rational_by_to_t_uint256(value_25) -> converted
+    {
+        converted := cleanup_uint256(identity(cleanup_rational_by(value_25)))
+    }
+    function cleanup_t_rational_by(value_26) -> cleaned_27
+    { cleaned_27 := value_26 }
+    function convert_rational_0_by_1_to_uint256(value_28) -> converted_29
+    {
+        converted_29 := cleanup_uint256(identity(cleanup_t_rational_by(value_28)))
+    }
+    /// @ast-id 43
+    function fun_assignBeforeTermination(var_x_11)
+    {
+        let _1 := 0xac7c932dfed5a12f8cee69b87b1db28759f9abab0760d37031670980a55a2168
+        let _2 := allocate_unbounded()
+        let _3 := abi_encode_tuple_stringliteral_3c4e(_2)
+        log1(_2, sub(_3, _2), _1)
+        let var_balance
+        let zero_uint256 := zero_value_for_split_uint256()
+        var_balance := zero_uint256
+        let _5 := var_x_11
+        let expr_22 := _5
+        let expr_23 := fun_f1(expr_22)
+        let expr_24 := 0x01
+        let expr_25 := eq(cleanup_bool(expr_23), cleanup_bool(expr_24))
+        if expr_25
+        {
+            let expr_27 := 0x2717
+            let _6 := convert_t_rational_by_to_t_uint256(expr_27)
+            var_balance := _6
+            let expr_28 := _6
+            leave
+        }
+        let _7 := var_balance
+        let expr_33 := _7
+        let expr := 0x00
+        let expr_35 := eq(cleanup_uint256(expr_33), convert_rational_0_by_1_to_uint256(expr))
+        if expr_35
+        {
+            let _8 := 0x757587e61c9ea391fd556c0cd9b59fb64ea23c21c63e92a104fac409fed38035
+            let _9 := allocate_unbounded()
+            let _10 := abi_encode_tuple(_9)
+            log1(_9, sub(_10, _9), _8)
+        }
+        leave
+    }
+    function zero_value_for_split_bool() -> ret_30
+    { ret_30 := 0 }
+    function cleanup_rational_by_1(value_31) -> cleaned_32
+    { cleaned_32 := value_31 }
+    function convert_rational_by_to_uint256(value_33) -> converted_34
+    {
+        converted_34 := cleanup_uint256(identity(cleanup_rational_by_1(value_33)))
+    }
+    /// @ast-id 55
+    function fun_f1(var_x) -> var
+    {
+        let zero_bool := zero_value_for_split_bool()
+        var := zero_bool
+        let _12 := var_x
+        let expr_50 := _12
+        let expr_51 := 0x0a
+        let expr_52 := gt(cleanup_uint256(expr_50), convert_rational_by_to_uint256(expr_51))
+        var := expr_52
+        leave
+    }
+}
+am gasit termination FlowOut
+am un ExpressionStatement
+am un ExpressionStatement
+visiting block {
+    revert_error_ca66f745a3ce8ff40e2ccaf1ad45db7774001b90d25810abd9040049be7bf4bb()
+}
+am gasit termination FlowOut
+am un If
+am un ExpressionStatement
+am un VariableDeclaration
+let _1 := allocate_unbounded()
+am un ExpressionStatement
+am un ExpressionStatement
+visiting block {
+    mstore(64, memoryguard(128))
+    if callvalue()
+    {
+        revert_error_ca66f745a3ce8ff40e2ccaf1ad45db7774001b90d25810abd9040049be7bf4bb()
+    }
+    constructor_Termination()
+    let _1 := allocate_unbounded()
+    codecopy(_1, dataoffset("Termination_56_deployed"), datasize("Termination_56_deployed"))
+    return(_1, datasize("Termination_56_deployed"))
+}
+am gasit termination TERMINATE
+am un Assignment
+memPtr := mload(64)
+visiting block { memPtr := mload(64) }
+am gasit termination FlowOut
+am un FunctionDefinition
+am un ExpressionStatement
+visiting block { revert(0, 0) }
+am gasit termination TERMINATE
+am un FunctionDefinition
+visiting block { }
+block has no statements
+am un FunctionDefinition
+visiting block {
+    {
+        mstore(64, memoryguard(128))
+        if callvalue()
+        {
+            revert_error_ca66f745a3ce8ff40e2ccaf1ad45db7774001b90d25810abd9040049be7bf4bb()
+        }
+        constructor_Termination()
+        let _1 := allocate_unbounded()
+        codecopy(_1, dataoffset("Termination_56_deployed"), datasize("Termination_56_deployed"))
+        return(_1, datasize("Termination_56_deployed"))
+    }
+    function allocate_unbounded() -> memPtr
+    { memPtr := mload(64) }
+    function revert_error_ca66f745a3ce8ff40e2ccaf1ad45db7774001b90d25810abd9040049be7bf4bb()
+    { revert(0, 0) }
+    function constructor_Termination()
+    { }
+}
+am gasit termination FlowOut

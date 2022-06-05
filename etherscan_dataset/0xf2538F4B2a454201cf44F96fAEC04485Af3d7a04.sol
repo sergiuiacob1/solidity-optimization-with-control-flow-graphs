@@ -1,0 +1,60 @@
+{{
+  "language": "Solidity",
+  "settings": {
+    "evmVersion": "london",
+    "libraries": {},
+    "metadata": {
+      "bytecodeHash": "ipfs",
+      "useLiteralContent": true
+    },
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "remappings": [],
+    "outputSelection": {
+      "*": {
+        "*": [
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "devdoc",
+          "userdoc",
+          "metadata",
+          "abi"
+        ]
+      }
+    }
+  },
+  "sources": {
+    "@openzeppelin/contracts/interfaces/IERC165.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts v4.4.1 (interfaces/IERC165.sol)\n\npragma solidity ^0.8.0;\n\nimport \"../utils/introspection/IERC165.sol\";\n"
+    },
+    "@openzeppelin/contracts/interfaces/IERC2981.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.5.0) (interfaces/IERC2981.sol)\n\npragma solidity ^0.8.0;\n\nimport \"./IERC165.sol\";\n\n/**\n * @dev Interface for the NFT Royalty Standard.\n *\n * A standardized way to retrieve royalty payment information for non-fungible tokens (NFTs) to enable universal\n * support for royalty payments across all NFT marketplaces and ecosystem participants.\n *\n * _Available since v4.5._\n */\ninterface IERC2981 is IERC165 {\n    /**\n     * @dev Returns how much royalty is owed and to whom, based on a sale price that may be denominated in any unit of\n     * exchange. The royalty amount is denominated and should be payed in that same unit of exchange.\n     */\n    function royaltyInfo(uint256 tokenId, uint256 salePrice)\n        external\n        view\n        returns (address receiver, uint256 royaltyAmount);\n}\n"
+    },
+    "@openzeppelin/contracts/security/ReentrancyGuard.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts v4.4.1 (security/ReentrancyGuard.sol)\n\npragma solidity ^0.8.0;\n\n/**\n * @dev Contract module that helps prevent reentrant calls to a function.\n *\n * Inheriting from `ReentrancyGuard` will make the {nonReentrant} modifier\n * available, which can be applied to functions to make sure there are no nested\n * (reentrant) calls to them.\n *\n * Note that because there is a single `nonReentrant` guard, functions marked as\n * `nonReentrant` may not call one another. This can be worked around by making\n * those functions `private`, and then adding `external` `nonReentrant` entry\n * points to them.\n *\n * TIP: If you would like to learn more about reentrancy and alternative ways\n * to protect against it, check out our blog post\n * https://blog.openzeppelin.com/reentrancy-after-istanbul/[Reentrancy After Istanbul].\n */\nabstract contract ReentrancyGuard {\n    // Booleans are more expensive than uint256 or any type that takes up a full\n    // word because each write operation emits an extra SLOAD to first read the\n    // slot's contents, replace the bits taken up by the boolean, and then write\n    // back. This is the compiler's defense against contract upgrades and\n    // pointer aliasing, and it cannot be disabled.\n\n    // The values being non-zero value makes deployment a bit more expensive,\n    // but in exchange the refund on every call to nonReentrant will be lower in\n    // amount. Since refunds are capped to a percentage of the total\n    // transaction's gas, it is best to keep them low in cases like this one, to\n    // increase the likelihood of the full refund coming into effect.\n    uint256 private constant _NOT_ENTERED = 1;\n    uint256 private constant _ENTERED = 2;\n\n    uint256 private _status;\n\n    constructor() {\n        _status = _NOT_ENTERED;\n    }\n\n    /**\n     * @dev Prevents a contract from calling itself, directly or indirectly.\n     * Calling a `nonReentrant` function from another `nonReentrant`\n     * function is not supported. It is possible to prevent this from happening\n     * by making the `nonReentrant` function external, and making it call a\n     * `private` function that does the actual work.\n     */\n    modifier nonReentrant() {\n        // On the first call to nonReentrant, _notEntered will be true\n        require(_status != _ENTERED, \"ReentrancyGuard: reentrant call\");\n\n        // Any calls to nonReentrant after this point will fail\n        _status = _ENTERED;\n\n        _;\n\n        // By storing the original value once again, a refund is triggered (see\n        // https://eips.ethereum.org/EIPS/eip-2200)\n        _status = _NOT_ENTERED;\n    }\n}\n"
+    },
+    "@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts v4.4.1 (utils/introspection/IERC165.sol)\n\npragma solidity ^0.8.0;\n\n/**\n * @dev Interface of the ERC165 standard, as defined in the\n * https://eips.ethereum.org/EIPS/eip-165[EIP].\n *\n * Implementers can declare support of contract interfaces, which can then be\n * queried by others ({ERC165Checker}).\n *\n * For an implementation, see {ERC165}.\n */\ninterface IERC165 {\n    /**\n     * @dev Returns true if this contract implements the interface defined by\n     * `interfaceId`. See the corresponding\n     * https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section]\n     * to learn more about how these ids are created.\n     *\n     * This function call must use less than 30 000 gas.\n     */\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\n}\n"
+    },
+    "contracts/FinalizeAuctionControllerMint.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.7;\n\nimport \"./utils/EnglishAuctionStorage.sol\";\nimport \"./SafeEthSender.sol\";\nimport \"../interfaces/INFT.sol\";\n\ncontract FinalizeAuctionControllerMint is EnglishAuctionStorage, SafeEthSender {\n    event AuctionRoyaltiesPaid(\n        uint32 auctionId,\n        uint32 nftId,\n        address artistAddress,\n        uint256 royaltyAmount\n    );\n\n    function finalize(uint32 _auctionId) external {\n        AuctionStruct storage auction = auctionIdToAuction[_auctionId];\n\n        INFT nft = INFT(auction.nftContractAddress);\n\n        uint32 nftId = nft.nftId();\n\n        if (\n            auction.auctionBalance == 0 && auction.bidder == payable(address(0))\n        ) {\n            emit AuctionRoyaltiesPaid(_auctionId, nftId, address(0), 0);\n        } else {\n            (address receiver, uint256 royaltyAmount) = nft.royaltyInfo(\n                auction.tokenId,\n                auction.auctionBalance\n            );\n\n            uint256 amountForWithdrawalAddress = auction.auctionBalance -\n                royaltyAmount;\n\n            auction.auctionBalance = 0;\n\n            sendEthWithLimitedGas(payable(receiver), royaltyAmount, 5000);\n\n            sendEthWithLimitedGas(\n                withdrawalAddress,\n                amountForWithdrawalAddress,\n                5000\n            );\n\n            nft.awardToken(auction.bidder, auction.tokenId);\n\n            emit AuctionRoyaltiesPaid(\n                _auctionId,\n                nftId,\n                receiver,\n                royaltyAmount\n            );\n        }\n    }\n\n    function cancel(uint32 _auctionId) external {\n        revert();\n    }\n\n    function adminCancel(uint32 _auctionId, string memory _reason) external {\n        require(\n            bytes(_reason).length > 0,\n            \"English Auction: Include a reason for this cancellation\"\n        );\n        AuctionStruct storage auction = auctionIdToAuction[_auctionId];\n        require(auction.timeEnd > 0, \"English Auction: Auction not found\");\n    }\n\n    function getAuctionType() external view returns (string memory) {\n        return \"MINT\";\n    }\n}\n"
+    },
+    "contracts/SafeEthSender.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.7;\n\nimport \"@openzeppelin/contracts/security/ReentrancyGuard.sol\";\nimport \"./utils/CallHelpers.sol\";\n\nabstract contract SafeEthSender is ReentrancyGuard {\n    mapping(address => uint256) private withdrawRegistry;\n\n    event PendingWithdraw(address _user, uint256 _amount);\n    event Withdrawn(address _user, uint256 _amount);\n\n    constructor() ReentrancyGuard() {}\n\n    function sendEthWithLimitedGas(\n        address payable _user,\n        uint256 _amount,\n        uint256 _gasLimit\n    ) internal {\n        if (_amount == 0) {\n            return;\n        }\n\n        (bool success, ) = _user.call{value: _amount, gas: _gasLimit}(\"\");\n        if (!success) {\n            withdrawRegistry[_user] += _amount;\n\n            emit PendingWithdraw(_user, _amount);\n        }\n    }\n\n    function getAmountToWithdrawForUser(address user)\n        public\n        view\n        returns (uint256)\n    {\n        return withdrawRegistry[user];\n    }\n\n    function withdrawPendingEth() external {\n        this.withdrawPendingEthFor(payable(msg.sender));\n    }\n\n    function withdrawPendingEthFor(address payable _user)\n        external\n        nonReentrant\n    {\n        uint256 amount = withdrawRegistry[_user];\n        require(amount > 0, \"SafeEthSender: no funds to withdraw\");\n        withdrawRegistry[_user] = 0;\n        (bool success, bytes memory response) = _user.call{value: amount}(\"\");\n\n        if (!success) {\n            string memory message = CallHelpers.getRevertMsg(response);\n            revert(message);\n        }\n\n        emit Withdrawn(_user, amount);\n    }\n}\n"
+    },
+    "contracts/utils/CallHelpers.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.7;\n\nlibrary CallHelpers {\n    function getRevertMsg(bytes memory _returnData)\n        internal\n        pure\n        returns (string memory)\n    {\n        if (_returnData.length < 68) return \"Transaction reverted silently\";\n\n        assembly {\n            _returnData := add(_returnData, 0x04)\n        }\n        return abi.decode(_returnData, (string));\n    }\n}\n"
+    },
+    "contracts/utils/EnglishAuctionStorage.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.7;\n\nimport \"../../interfaces/IAccessManager.sol\";\n\nabstract contract EnglishAuctionStorage {\n    uint32 lastAuctionId;\n    address payable public withdrawalAddress;\n    IAccessManager accessManager;\n\n    struct AuctionStruct {\n        uint32 tokenId;\n        uint32 timeStart;\n        uint32 timeEnd;\n        uint8 minBidPercentage;\n        uint256 initialPrice;\n        uint256 minBidValue;\n        uint256 auctionBalance;\n        address nftContractAddress;\n        address finalizeAuctionControllerAddress;\n        address payable bidder;\n        bytes additionalDataForFinalizeAuction;\n    }\n\n    mapping(uint32 => AuctionStruct) auctionIdToAuction;\n}\n"
+    },
+    "interfaces/IAccessManager.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.7;\n\ninterface IAccessManager {\n    function isOperationalAddress(address _address)\n        external\n        view\n        returns (bool);\n}\n"
+    },
+    "interfaces/INFT.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.7;\n\nimport \"@openzeppelin/contracts/interfaces/IERC2981.sol\";\n\ninterface INFT is IERC2981 {\n    function awardToken(address _user, uint32 _tokenID) external;\n\n    function totalAmountOfEdition() external view returns (uint32);\n\n    function timeStart() external view returns (uint32);\n\n    function timeEnd() external view returns (uint32);\n\n    function nftId() external view returns (uint32);\n\n    function init(\n        address _accessManangerAddress,\n        bytes memory _staticData,\n        bytes memory _dynamicData\n    ) external;\n}\n"
+    }
+  }
+}}

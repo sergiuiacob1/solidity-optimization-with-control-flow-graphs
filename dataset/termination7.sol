@@ -4,6 +4,7 @@ pragma solidity ^0.8.14;
 contract Termination {
     uint persistent_var;
     event FunctionCalled(string f);
+    event FunctionEnd(string f);
 
     function assignBeforeTermination(uint x) public {
         emit FunctionCalled("assignBeforeTermination");
@@ -17,6 +18,7 @@ contract Termination {
             return;
         }
 
+        // emit FunctionEnd("assignBeforeTermination");
         return;
     }
 

@@ -1,5 +1,36 @@
-\chapter*{Introducere} 
-\addcontentsline{toc}{chapter}{Introducere}
+\chapter{Introduction} 
+% \addcontentsline{toc}{chapter}{Introduction}
 
-Solidity is a highly volatile language at this point. It might be that details presented in this thesis will lose veridicity in the future.
-However, the high-level schemas, approaches and structure of the Solidity eco-system will roughly be the same.
+\section{Context} 
+% \addcontentsline{toc}{chapter}{Context}
+
+\paragraph*{}
+Static analysis has been at the core of \textbf{optimizing} code for many years now, doubled by its sibling, dynamic analysis. Very well known programming languages such as C++, Java, Golang etc. generate \textbf{bytecode}, by the usage of \textbf{compilers}, that is eventually interpreted by various virtual machines, such as LLVM, on various architectures \textemdash \ x86, x86\_64, AMD64, arm64 etc.
+
+While the virtual machines that run bytecode and the cpu architectures are shared across programming languages, since they ultimately revolve around the same assembly instructions, each programming language has its own compiler while, of course, interpreted languages such as Python have their own interpreter.
+
+Zooming in on how a compiler works, we see that the optimization step can be seen as a level in the Maslow pyramid, but in the software engineering world. While any compiled code may run just fine without it being optimized, it will more than likely miss on various performance improvements that will greatly speed up the code's run time and resources' usage.
+
+Writing high level code often means that one cannot always invest in the needed resources (time and knowledge) to perfectly optimize its code, nor can he/she make a cpu's frequency higher by writing a line of code. What the compiler can do, instead, is less. Running less instructions, in a better order, using registers more efficiently and moving less memory blocks around is what gets us the fastest computation. This is ultimately the optimizer's job in a compiler \textemdash \ find opportunities to generate more efficient bytecode.
+
+
+\section{Objective}
+
+The purpose of this thesis is to research the techniques of applying static analysis on high level code, in order to obtain efficient bytecode, regardless of the virtual machine it will execute on. These techniques are usually backed up by \textbf{intermediate representations} of the initial code, which can be either another high level code (with different syntax, but the same semantics), or data structures meant to provide an overview (or in-depth view) over the program execution.
+
+In this thesis, we will see how intermediate representations help, why they're useful, and how \textbf{Control Flow Graphs} determine which optimizations can be applied while doing static analysis. The programming language we will focus on is \textbf{Solidity} \footnote[1]{Solidity is a highly volatile language at this point, therefore it is probable that some of the details presented in this thesis will lose veridicity in the near future. However, the high-level schemas, approaches and structure of the Solidity eco-system will likely remain the same.}.
+
+\section{Motivation}
+
+\paragraph*{}
+Solidity is a new programming language on the market, backing up the development of Smart Contracts deployed on the Ethereum blockchain. Since it is a relatively new technology, there is a lot of ongoing work to still build the basis of the eco-system and to enhance the compiler by basic features or well-known optimizations.
+
+An important aspect is that Solidity is an open-source technology, which facilitates \textbf{external contributions}, some of which will be provided by the usage of this thesis. Optimization sits at the heart of the compiler, and as the official documentation states, \cite[the optimizer is under heavy development]{solidity-optimizer}. This is sufficiently encouraging to research on how Control Flow Graphs, intermediate representations and static analysis techniques could be combined in order to improve the bytecode generated from Solidity.
+
+\section{Thesis structure}
+\paragraph*{}
+Bringing external contributions to a technology usually follows a logical timeline, around which this thesis was also structured. Specifically in our case, we'll go through understanding Solidity and its usecases, understanding what a compiler and what a optimizer is, how Solidity's compiler works, what are its optimizer's drawbacks and how we should solve these. Finally, we go through integrating our improvements into the actual Solidity codebase.
+
+In the first chapters, we set the knowledge base needed to improve the optimizer. We go through Solidity and the (relatively) new Yul IR, static analysis, control flow graphs (CFG), abstract syntax trees (AST) and the Solidity optimizer structure.
+
+In the latter chapters, we do a deep dive into a few optimization steps and identify edge cases not optimized by these and do a few benchmarks to see how much gas is saved through these improvements. Finally, we conclude with some experiments on Etherscan, where we try to optimize already optimized verified smart

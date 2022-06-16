@@ -19,32 +19,70 @@
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
 \babel@aux{english}{}
-\@writefile{toc}{\contentsline {chapter}{List of Figures}{1}{chapter*.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{List of Figures}{1}{chapter*.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Motivation}{2}{chapter*.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Introducere}{3}{chapter*.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Solidity}{4}{chapter*.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{YUL Intermediate Representation}{5}{chapter*.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Control Flow Graphs}{7}{chapter*.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Solidity Optimizer}{8}{chapter*.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Control Flow Graphs Study Case}{9}{chapter*.12}\protected@file@percent }
-\citation{solidity-documentation}
 \citation{sif}
+\@writefile{toc}{\contentsline {chapter}{List of Figures}{1}{chapter*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Context}{2}{section.1.1}\protected@file@percent }
+\citation{solidity-optimizer}
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Objective}{3}{section.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Motivation}{3}{section.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Thesis structure}{3}{section.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Contributions}{5}{chapter.2}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}A way to contribute}{5}{section.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Enhancement of optimization steps}{6}{section.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Reducing gas usage of smart contracts}{6}{section.2.3}\protected@file@percent }
+\citation{solidity-lang}
+\citation{coin-telegraph-2020}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Solidity}{7}{chapter.3}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Overview}{7}{section.3.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Solidity interest according to Google web searches}}{7}{figure.3.1}\protected@file@percent }
+\newlabel{fig:solidity-interest}{{3.1}{7}{Solidity interest according to Google web searches}{figure.3.1}{}}
+\citation{solidity-summit-2022-hari}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces Contract deployment per month in the past year, according to Dune Analytics}}{8}{figure.3.2}\protected@file@percent }
+\newlabel{fig:dune-analytics-2022}{{3.2}{8}{Contract deployment per month in the past year, according to Dune Analytics}{figure.3.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Solidity's Compiler and Optimizer}{8}{section.3.2}\protected@file@percent }
+\citation{ast-wiki}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Solidity compilation flow}}{9}{figure.3.3}\protected@file@percent }
+\newlabel{fig:solc-compilation-flow}{{3.3}{9}{Solidity compilation flow}{figure.3.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Intermediate Representations}{9}{section.3.3}\protected@file@percent }
+\citation{yul-description}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Solidity AST Example. The body of the function is an AST node itself, in which the statements are other AST nodes. Generated using AST Explorer.}}{10}{figure.3.4}\protected@file@percent }
+\newlabel{fig:solidity-ast-example}{{3.4}{10}{Solidity AST Example. The body of the function is an AST node itself, in which the statements are other AST nodes. Generated using AST Explorer}{figure.3.4}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}Example of Yul code which computes exponentiation recursively}{10}{lstlisting.3.1}\protected@file@percent }
+\citation{sif}
+\citation{sif}
+\citation{sif}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Other tools performing static analysis}{11}{section.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.1}Solidity Instrumentation Framework (SIF)}{11}{subsection.3.4.1}\protected@file@percent }
 \citation{slither}
-\@writefile{toc}{\contentsline {chapter}{\numberline {1}Solidity static analysis methods}{10}{chapter.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces SIF workflow, captured from SIF: A Framework for Solidity Contract Instrumentation and Analysis\cite  {sif}}}{12}{figure.3.5}\protected@file@percent }
+\newlabel{fig:sif-workflow}{{3.5}{12}{SIF workflow, captured from SIF: A Framework for Solidity Contract Instrumentation and Analysis\cite {sif}}{figure.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4.2}Slither}{12}{subsection.3.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Slither Architecture}}{13}{figure.3.6}\protected@file@percent }
+\newlabel{fig:slither-architecture}{{3.6}{13}{Slither Architecture}{figure.3.6}{}}
+\citation{solidity-optimizer}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Contributions}{14}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {1.1}Solidity Instrumentation Framework (SIF)}{10}{section.1.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Slither Architecture}}{11}{figure.1.1}\protected@file@percent }
-\newlabel{fig:slither-architecture}{{1.1}{11}{Slither Architecture}{figure.1.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Slither}{11}{section.1.2}\protected@file@percent }
-\citation{solidity-documentation}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Contributions}{12}{chapter.2}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{Benchmarking}{13}{chapter*.13}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Conclusions}{15}{chapter*.15}\protected@file@percent }
-\bibcite{solidity-documentation}{1}
-\bibcite{sif}{2}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{16}{chapter*.16}\protected@file@percent }
-\gdef \@abspage@last{19}
+\@writefile{toc}{\contentsline {chapter}{YUL Intermediate Representation}{15}{chapter*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Control Flow Graphs}{16}{chapter*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Solidity Optimizer}{17}{chapter*.28}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Control Flow Graphs Study Case}{18}{chapter*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Benchmarking}{19}{chapter*.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Conclusions}{20}{chapter*.32}\protected@file@percent }
+\bibcite{solidity-lang}{1}
+\bibcite{solidity-optimizer}{2}
+\bibcite{coin-telegraph-2020}{3}
+\bibcite{solidity-summit-2022-hari}{4}
+\bibcite{sif}{5}
+\bibcite{slither}{6}
+\bibcite{ast-wiki}{7}
+\bibcite{yul-description}{8}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{21}{chapter*.33}\protected@file@percent }
+\gdef \@abspage@last{25}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.25)  2 JUN 2022 09:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.25)  16 JUN 2022 18:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -231,7 +231,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
 )
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 58.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 60.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -241,24 +241,24 @@ File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
 \c@lstlisting=\count284
 
 *geometry* driver: auto-detecting
@@ -314,7 +314,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2022/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 58.
+Package hyperref Info: Link coloring OFF on input line 60.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/local/texlive/2022/texmf-dist/tex/latex/refcount/refcount.sty
@@ -324,9 +324,10 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count291
 )
-LaTeX Info: Redefining \ref on input line 58.
-LaTeX Info: Redefining \pageref on input line 58.
-LaTeX Info: Redefining \nameref on input line 58.
+LaTeX Info: Redefining \ref on input line 60.
+LaTeX Info: Redefining \pageref on input line 60.
+LaTeX Info: Redefining \nameref on input line 60.
+ (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
@@ -335,7 +336,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 6.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 6.
-<images//logoFii.png, id=4, 193.47281pt x 188.95593pt>
+<images//logoFii.png, id=104, 193.47281pt x 188.95593pt>
 File: images//logoFii.png Graphic file (type png)
 <use images//logoFii.png>
 Package pdftex.def Info: images//logoFii.png  used on input line 13.
@@ -347,7 +348,21 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has be
 <to be read again> 
                    \relax 
 l.35 \end{titlepage}
-                     [1])
+                     [1]) (./main.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 4.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.23 ...l Flow Graphs Study Case}{18}{chapter*.30}
+                                                  % [1
+
+])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
@@ -355,331 +370,85 @@ l.35 \end{titlepage}
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.73     \cleardoublepage
-                          [1
-
-]
+l.75     \cleardoublepage
+                          [2] (./main.lof)
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
- (./chapters/motivation.tex [1
+ (./chapters/introduction.tex [1
 
-
-]) (./chapters/introduction.tex [2
-
-]) (./chapters/solidity.tex [3
-
-]) (./chapters/yul.tex [4
-
-]
-Overfull \hbox (0.53537pt too wide) in paragraph at lines 10--12
-[]\OT1/ppl/m/n/12 Compiling via the YUL IR con-sid-ered pro-duc-tion ready with 0.8.13 re-lease, March
- []
-
-./chapters/yul.tex:22: You can't use `macro parameter character #' in horizontal mode.
-l.22 .../docs.soliditylang.org/en/latest/yul.html#
-                                                  
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-LaTeX Warning: Reference `cfg-basic-block' on page 5 undefined on input line 43.
-
-./chapters/yul.tex:45: Misplaced alignment tab character &.
-l.45 ...tps://www.youtube.com/watch?v=BWO7ij9sLuA&
-                                                  list=PLX8x7Zj6Vezl1lqBgxiQ...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./chapters/yul.tex:45: Misplaced alignment tab character &.
-l.45 ...A&list=PLX8x7Zj6Vezl1lqBgxiQH3TFbRNZza8Fk&
-                                                  index=17&ab_channel=Solidi...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./chapters/yul.tex:45: Misplaced alignment tab character &.
-l.45 ...X8x7Zj6Vezl1lqBgxiQH3TFbRNZza8Fk&index=17&
-                                                  ab_channel=SoliditySummit
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./chapters/yul.tex:45: Missing $ inserted.
-<inserted text> 
-                $
-l.45 ...7Zj6Vezl1lqBgxiQH3TFbRNZza8Fk&index=17&ab_
-                                                  channel=SoliditySummit
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 45.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 45.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 45.
-
-LaTeX Warning: Command \textendash invalid in math mode on input line 48.
-
-./chapters/yul.tex:50: Missing $ inserted.
-<inserted text> 
-                $
-l.50 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (363.99857pt too wide) in paragraph at lines 42--50
-\OT1/ppl/m/n/12 plex op-ti-miza-tions > De ex-em-plu, https://www.youtube.com/watch?v=BWO7ij9sLuAlist=PLX8x7Zj6Vezl1lqBgxiQH3TFbRNZza8Fkindex=17ab$[]\OML/cmm/m/it/12 hannel \OT1/cmr/m/n/12 =
- []
-
-
-Overfull \hbox (119.516pt too wide) in paragraph at lines 42--50
-\OML/cmm/m/it/12 SoliditySummit > minutul\OT1/cmr/m/n/12 7 : 00\OML/cmm/m/it/12 ; detranspusincuvinte > variabilaeOUTSIDEthebasicblock; pentrucaleader \OMS/cmsy/m/n/12 ^^@
- []
-
-
-Overfull \hbox (133.86pt too wide) in paragraph at lines 42--50
-\OML/cmm/m/it/12 ulbasicblock \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 uluieacelJUMPDEST > Itcould; buttheengineeringconsensisthatitshouldnot\OT1/cmr/m/n/12 {\OML/cmm/m/it/12 TOOdangerous\OT1/cmr/m/n/12 !!! \OML/cmm/m/it/12 >
- []
-
-[5
-
-]) (./chapters/cfg.tex [6]) (./chapters/solidity_optimizer.tex [7
-
-]) (./chapters/cfg_study_case.tex [8
-
-]) (./chapters/chapter1.tex [9
 
 ]
 Chapter 1.
-
-LaTeX Warning: Citation `solidity-documentation' on page 10 undefined on input line 3.
-
-
-LaTeX Warning: Citation `sif' on page 10 undefined on input line 9.
-
-
-LaTeX Warning: Citation `slither' on page 10 undefined on input line 15.
-
-[10
+[2
 
 ]
-<images/slither_architecture.png, id=82, 601.24625pt x 209.78375pt>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 21.
+ [3]) [4] (./chapters/contributions.tex
+Chapter 2.
+[5
+
+
+]) [6] (./chapters/chapter1.tex
+Chapter 3.
+<images/solidity_interest.png, id=208, 1162.3425pt x 396.48125pt>
+File: images/solidity_interest.png Graphic file (type png)
+<use images/solidity_interest.png>
+Package pdftex.def Info: images/solidity_interest.png  used on input line 12.
+(pdftex.def)             Requested size: 426.79134pt x 145.5826pt.
+<images/dune_analytics_2022.png, id=209, 1447.4075pt x 837.1275pt>
+File: images/dune_analytics_2022.png Graphic file (type png)
+<use images/dune_analytics_2022.png>
+Package pdftex.def Info: images/dune_analytics_2022.png  used on input line 19.
+(pdftex.def)             Requested size: 426.79134pt x 246.83551pt.
+[7
+
+
+ <./images/solidity_interest.png>]
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 30.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+) [8 <./images/dune_analytics_2022.png>]
+<images/solc_flow.png, id=230, 2794.44pt x 803.0pt>
+File: images/solc_flow.png Graphic file (type png)
+<use images/solc_flow.png>
+Package pdftex.def Info: images/solc_flow.png  used on input line 39.
+(pdftex.def)             Requested size: 426.79134pt x 122.63805pt.
+<images/solidity_ast_example.png, id=232, 1126.2075pt x 472.76625pt>
+File: images/solidity_ast_example.png Graphic file (type png)
+<use images/solidity_ast_example.png>
+Package pdftex.def Info: images/solidity_ast_example.png  used on input line 54.
+(pdftex.def)             Requested size: 426.79134pt x 179.16249pt.
+ [9 <./images/solc_flow.png>]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 72.
+ [10 <./images/solidity_ast_example.png>]
+<images/sif_workflow.png, id=262, 831.105pt x 268.00125pt>
+File: images/sif_workflow.png Graphic file (type png)
+<use images/sif_workflow.png>
+Package pdftex.def Info: images/sif_workflow.png  used on input line 103.
+(pdftex.def)             Requested size: 426.79134pt x 137.62346pt.
+ [11]
+<images/slither_architecture.png, id=281, 601.24625pt x 209.78375pt>
 File: images/slither_architecture.png Graphic file (type png)
 <use images/slither_architecture.png>
-Package pdftex.def Info: images/slither_architecture.png  used on input line 23.
+Package pdftex.def Info: images/slither_architecture.png  used on input line 120.
 (pdftex.def)             Requested size: 426.79134pt x 148.91867pt.
-) (./chapters/chapter2.tex [11 <./images/slither_architecture.png>]
-Chapter 2.
+ [12 <./images/sif_workflow.png>]) (./chapters/chapter2.tex [13 <./images/slither_architecture.png>]
+Chapter 4.
+) (./chapters/chapter3.tex) (./chapters/chapter4.tex) (./chapters/yul.tex [14
 
-LaTeX Warning: Citation `solidity-documentation' on page 12 undefined on input line 3.
+]) (./chapters/cfg.tex [15
 
-) (./chapters/benchmark.tex [12
+]) (./chapters/solidity_optimizer.tex [16
 
-]
-Overfull \hbox (6.67958pt too wide) in paragraph at lines 11--15
-[]\OT1/ppl/m/n/12 * test/-tool-s/isoltest --test "yul*/*" <- asta!!! * Yul Op-ti-mizer Test Sum-mary: 549/564
- []
+]) (./chapters/cfg_study_case.tex [17
 
+]) (./chapters/benchmark.tex [18
 
-Overfull \hbox (140.53731pt too wide) in paragraph at lines 11--15
-\OT1/ppl/m/n/12 un dataset gen https://www.kaggle.com/datasets/xblock/smart-contract-attribute-dataset?resource=download
- []
+]) (./chapters/conclusions.tex [19
 
-./chapters/benchmark.tex:19: Misplaced alignment tab character &.
-l.19 ...tps://www.youtube.com/watch?v=BWO7ij9sLuA&
-                                                  list=PLX8x7Zj6Vezl1lqBgxiQ...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./chapters/benchmark.tex:19: Misplaced alignment tab character &.
-l.19 ...A&list=PLX8x7Zj6Vezl1lqBgxiQH3TFbRNZza8Fk&
-                                                  index=17&ab_channel=Solidi...
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./chapters/benchmark.tex:19: Misplaced alignment tab character &.
-l.19 ...X8x7Zj6Vezl1lqBgxiQH3TFbRNZza8Fk&index=17&
-                                                  ab_channel=SoliditySummit
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
-
-./chapters/benchmark.tex:19: Missing $ inserted.
-<inserted text> 
-                $
-l.19 ...7Zj6Vezl1lqBgxiQH3TFbRNZza8Fk&index=17&ab_
-                                                  channel=SoliditySummit
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-./chapters/benchmark.tex:20: Missing $ inserted.
-<inserted text> 
-                $
-l.20 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (393.71085pt too wide) in paragraph at lines 16--20
-\OT1/ppl/m/n/12 gas con-sump-tion. Minute 16:00 de aici: https://www.youtube.com/watch?v=BWO7ij9sLuAlist=PLX8x7Zj6Vezl1lqBgxiQH3TFbRNZza8Fkindex=17ab$[]\OML/cmm/m/it/12 hannel \OT1/cmr/m/n/12 =
- []
-
-
-Overfull \hbox (127.78333pt too wide) in paragraph at lines 25--28
-[]\OT1/ppl/m/n/12 > Com-para-ti-ile de gas { DE LA COMMIT-UL VER-SI-U-NII!! > 80d49f37028b13e162951b6b67b0a42f477ba93c
- []
-
-./chapters/benchmark.tex:41: Missing $ inserted.
-<inserted text> 
-                $
-l.41 2 | pragma solidity ^
-                          0.8.14;
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-./chapters/benchmark.tex:42: LaTeX Error: Unicode character ^^^ (U+001E)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.42   | ^^^
-            ^^^^^^^^^^^^^^^^^^^^^
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./chapters/benchmark.tex:42: LaTeX Error: Unicode character ^^^ (U+001E)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.42   | ^^^^^^
-               ^^^^^^^^^^^^^^^^^^
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./chapters/benchmark.tex:42: LaTeX Error: Unicode character ^^^ (U+001E)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.42   | ^^^^^^^^^
-                  ^^^^^^^^^^^^^^^
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./chapters/benchmark.tex:42: LaTeX Error: Unicode character ^^^ (U+001E)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.42   | ^^^^^^^^^^^^
-                     ^^^^^^^^^^^^
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./chapters/benchmark.tex:42: LaTeX Error: Unicode character ^^^ (U+001E)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.42   | ^^^^^^^^^^^^^^^
-                        ^^^^^^^^^
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./chapters/benchmark.tex:42: LaTeX Error: Unicode character ^^^ (U+001E)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.42   | ^^^^^^^^^^^^^^^^^^
-                           ^^^^^^
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./chapters/benchmark.tex:42: LaTeX Error: Unicode character ^^^ (U+001E)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.42   | ^^^^^^^^^^^^^^^^^^^^^
-                              ^^^
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./chapters/benchmark.tex:42: LaTeX Error: Unicode character ^^^ (U+001E)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.42   | ^^^^^^^^^^^^^^^^^^^^^^^^
-                                 
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-./chapters/benchmark.tex:43: Missing $ inserted.
-<inserted text> 
-                $
-l.43 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-) [13
-
-] (./chapters/conclusions.tex [14]) (./chapters/bibliography.tex
+]) (./chapters/bibliography.tex
 Overfull \hbox (50.33495pt too wide) in paragraph at lines 6--3
 \OT1/ppl/m/n/12 still un-der heavy de-vel-op-ment. https://www.overleaf.com/project/627ab6f7ebec3330916a293b
  []
@@ -689,43 +458,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 6--3
 
  []
 
-[15
+[20
 
-]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 5.
- (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ot1pcr.fd
-File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)) [16
+]) [21
 
 ] (./main.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  197C5C401A50D2D74029EF4FD7C5358C;2217.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: DB322F3063AFA83571BD0B5E4D22FA12;3766.
  ) 
 Here is how much of TeX's memory you used:
- 11745 strings out of 478268
- 185575 string characters out of 5846347
- 498053 words of memory out of 5000000
- 29725 multiletter control sequences out of 15000+600000
- 483706 words of font info for 62 fonts, out of 8000000 for 9000
+ 12168 strings out of 478268
+ 190289 string characters out of 5846347
+ 569157 words of memory out of 5000000
+ 30064 multiletter control sequences out of 15000+600000
+ 488217 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,6n,63p,710b,356s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (19 pages, 314482 bytes).
+ 60i,8n,63p,939b,1866s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on main.pdf (25 pages, 1089044 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 390 PDF objects out of 1000 (max. 8388607)
+ 336 compressed objects within 4 object streams
+ 105 named destinations out of 1000 (max. 500000)
+ 236 words of extra memory for PDF output out of 10000 (max. 10000000)
 

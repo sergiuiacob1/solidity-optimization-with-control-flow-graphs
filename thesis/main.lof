@@ -1,4 +1,11 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Slither Architecture}}{11}{figure.1.1}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Solidity interest according to Google web searches}}{7}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Contract deployment per month in the past year, according to Dune Analytics}}{8}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Solidity compilation flow}}{9}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Solidity AST Example. The body of the function is an AST node itself, in which the statements are other AST nodes. Generated using AST Explorer.}}{10}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces SIF workflow, captured from SIF: A Framework for Solidity Contract Instrumentation and Analysis\cite {sif}}}{12}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Slither Architecture}}{13}{figure.3.6}%
 \addvspace {10\p@ }

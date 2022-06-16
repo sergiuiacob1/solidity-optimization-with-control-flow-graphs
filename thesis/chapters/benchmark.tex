@@ -2,45 +2,50 @@
 \addcontentsline{toc}{chapter}{Benchmarking}
 
 
-\paragraph*{}
-Unit testing
-* chestii ciudate gen --yul-optimizations 'r' 'u' 'ru' 'ur' 'rr' 'uu' 'rru' 'uur' 'rur' 'uru' 'uurruurr'
-* ../test//libyul/yulOptimizerTests
-* ../test//cmdlineTests/
+% \paragraph*{}
+% Unit testing
+% \begin{itemize}
+% \item chestii ciudate gen --yul-optimizations 'r' 'u' 'ru' 'ur' 'rr' 'uu' 'rru' 'uur' 'rur' 'uru' 'uurruurr'
+% \item ../test//libyul/yulOptimizerTests
+% \item ../test//cmdlineTests/
+% \end{itemize}
 
-* test/tools/isoltest --test "yul*/*" <- asta!!!
-    * Yul Optimizer Test Summary: 549/564 tests successful (15 tests skipped).
-* De ce am luat contracte de pe etherscan si nu dintr-un dataset gen https://www.kaggle.com/datasets/xblock/smart-contract-attribute-dataset?resource=download
-    * Pentru ca alea din kaggle is deprecated deja, prea multe breaking changes
+% \begin{itemize}
+% \item test/tools/isoltest --test "yul*/*" <- asta!!!
+%     \item Yul Optimizer Test Summary: 549/564 tests successful (15 tests skipped).
+% \item De ce am luat contracte de pe etherscan si nu dintr-un dataset gen https://www.kaggle.com/datasets/xblock/smart-contract-attribute-dataset?resource=download
+%     \item Pentru ca alea din kaggle is deprecated deja, prea multe breaking changes
+% \end{itemize}
 
-When benchmarking:
-> DO NOT benchmark with the solc binary in prerelease mode
-> ONLY benchmark on contracts WITH A SINGLE function
-    > Reason: dispatch gas consumption. Minute 16:00 de aici: https://www.youtube.com/watch?v=BWO7ij9sLuA&list=PLX8x7Zj6Vezl1lqBgxiQH3TFbRNZza8Fk&index=17&ab_channel=SoliditySummit
+% When benchmarking:
+% DO NOT benchmark with the solc binary in prerelease mode
+% ONLY benchmark on contracts WITH A SINGLE function
 
-> De vorbit despre mediul de testare
-    > repository forked
-    > link catre schimbarile facute? :-?
+% Reason: dispatch gas consumption. Minute 16:00 de aici: https://www.youtube.com/watch?v=BWO7ij9sLuA&list=PLX8x7Zj6Vezl1lqBgxiQH3TFbRNZza8Fk&index=17&ab_channel=SoliditySummit
 
-> Comparatiile de gas – DE LA COMMIT-UL VERSIUNII!!
-    > 80d49f37028b13e162951b6b67b0a42f477ba93c <- commit-ul la care s-a facut release pt v0.8.14
-    > commit-urile mele ar trb sa vina peste asta
+% De vorbit despre mediul de testare
+%     repository forked
+%     link catre schimbarile facute? :-?
 
-
-Truffle commands to compile, migrate, and estimate gas consumption
+% > Comparatiile de gas \dashv DE LA COMMIT-UL VERSIUNII!!
+%     > 80d49f37028b13e162951b6b67b0a42f477ba93c <- commit-ul la care s-a facut release pt v0.8.14
+%     > commit-urile mele ar trb sa vina peste asta
 
 
-Raspunsul lui chriseth cand primeam eroarea asta:
+% Truffle commands to compile, migrate, and estimate gas consumption
 
-```
-Warning: This is a pre-release compiler version, please do not use it in production.
 
-Error: Source file requires different compiler version (current compiler is 0.8.14-develop.2022.6.1+commit.80d49f37.Darwin.appleclang) - note that nightly builds are considered to be strictly less than the released version
- --> /Users/sergiuiacob/solidity-optimization-with-control-flow-graphs/dataset/termination2.sol:2:1:
-  |
-2 | pragma solidity ^0.8.14;
-  | ^^^^^^^^^^^^^^^^^^^^^^^^
+% Raspunsul lui chriseth cand primeam eroarea asta:
 
-'''
+% ```
+% Warning: This is a pre-release compiler version, please do not use it in production.
 
-you need to tell the c++ compiler that you actually want to build a release build. We are working on improving that situation. You do this by doing echo -n > prerelease.txt in the project root
+% Error: Source file requires different compiler version (current compiler is 0.8.14-develop.2022.6.1+commit.80d49f37.Darwin.appleclang) - note that nightly builds are considered to be strictly less than the released version
+%  --> /Users/sergiuiacob/solidity-optimization-with-control-flow-graphs/dataset/termination2.sol:2:1:
+%   |
+% 2 | pragma solidity ^0.8.14;
+%   | ^^^^^^^^^^^^^^^^^^^^^^^^
+
+% '''
+
+% you need to tell the c++ compiler that you actually want to build a release build. We are working on improving that situation. You do this by doing echo -n > prerelease.txt in the project root

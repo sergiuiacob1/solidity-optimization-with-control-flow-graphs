@@ -12,6 +12,8 @@
 \usepackage[unicode]{hyperref}  % references from the table of contents
 \usepackage{xcolor}             % to define colors
 
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{3}
 
 % includes options
 \geometry{  a4paper,            % scientific thesis standard
@@ -72,25 +74,30 @@
     
     \cleardoublepage
     % \phantomsection
-    \addcontentsline{toc}{chapter}{\listfigurename}
-    \listoffigures
+
     
+    % \addcontentsline{toc}{chapter}{\listfigurename}
+    \listoffigures
+
     % chapters
     \setcounter{page}{1}
     \pagenumbering{arabic}
     
-    \input{chapters/motivation}
     \input{chapters/introduction}
+    \cleardoublepage
+    \input{chapters/contributions}
+    \cleardoublepage
+    
+    \input{chapters/chapter1} % Solidity, YUL IR, Compiler, Old vs new Optimizer
+    \input{chapters/chapter2} % Static analysis, control flow graphs
+    \input{chapters/chapter3} % Optimizer Suite deep dive
+    \input{chapters/chapter4} % Benchmarks
 
-    \input{chapters/solidity}
     \input{chapters/yul}
     \input{chapters/cfg}
 
     \input{chapters/solidity_optimizer}
     \input{chapters/cfg_study_case}
-    
-    \input{chapters/chapter1}
-    \input{chapters/chapter2}
     
     % \input{chapters/draft}
 

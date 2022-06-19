@@ -2,6 +2,47 @@
 \addcontentsline{toc}{chapter}{Benchmarking}
 
 
+For benchmarking gas, try to have contracts with only a single function <- Hari Muckalak 
+
+% \begin{lstlisting}[language=solidity]
+%     // SPDX-License-Identifier: MIT
+%     pragma solidity ^0.8.7;
+    
+%     contract VariableInsideLoop {
+%         function declareVariableInsideLoop() public pure {
+%             for (uint i = 1; i <= 1000; i++) {
+%                 uint x = i * i;
+%             }
+%         }
+    
+%         function declareVariableOutsideLoop() public pure {
+%             uint x;
+%             for (uint i = 1; i <= 1000; i++) {
+%                 x = i * i;
+%             }
+%         }
+%     }
+%     \end{lstlisting}
+    
+%     \^ Compiled with solidity 0.8.7, no optimizations enabled.
+%     inside loop gas cost: 420223 gas
+%     outside loop gas cost: 415250 gas
+    
+%     with 200 optimization runs:
+%     inside loop gas cost: 237215 gas
+%     outside loop gas cost: 232242 gas
+    
+%     Still lower!
+
+
+% variable declaration inside if: 21217 gas
+% variable declaration outside if: 21274 gas
+% in this case, outside consumes more gas
+
+% 200 optimization runs did not change anything
+
+% > DISPATCH GAS!!!
+
 % \paragraph*{}
 % Unit testing
 % \begin{itemize}

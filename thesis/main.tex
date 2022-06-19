@@ -11,9 +11,14 @@
 \usepackage[nottoc]{tocbibind}  % table of contents style
 \usepackage[unicode]{hyperref}  % references from the table of contents
 \usepackage{xcolor}             % to define colors
+\usepackage{wrapfig}
 
 \setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{3}
+
+\input{solidity-highlighting.tex}	% for solidity highlighting
+
+
 
 % includes options
 \geometry{  a4paper,            % scientific thesis standard
@@ -51,7 +56,7 @@
     showspaces=false,                
     showstringspaces=false,
     showtabs=false,                  
-    tabsize=2
+    tabsize=2,
 }
 \lstset{style=mystyle}
 
@@ -93,15 +98,14 @@
     \input{chapters/chapter3} % Optimizer Suite deep dive
     \input{chapters/chapter4} % Benchmarks
 
-    \input{chapters/yul}
-    \input{chapters/cfg}
+    % \input{chapters/yul}
 
-    \input{chapters/solidity_optimizer}
-    \input{chapters/cfg_study_case}
+    % \input{chapters/solidity_optimizer}
+    % \input{chapters/cfg_study_case}
     
     % \input{chapters/draft}
 
-    \input{chapters/benchmark}
+    % \input{chapters/benchmark}
 
     \input{chapters/conclusions}
     \input{chapters/bibliography}

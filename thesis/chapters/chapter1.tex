@@ -10,7 +10,7 @@ Although it's been around for around 8 years now, Solidity has just started to p
 \begin{figure}
     \centering
     \includegraphics[width=15cm]{images/solidity_interest.png}
-    \caption{Solidity interest according to Google web searches}
+    \caption{Solidity interest from 1st of January, 2014, to 1st of June, 2022, according to Google web searches}
     \label{fig:solidity-interest}
 \end{figure}
 
@@ -22,17 +22,17 @@ Although it's been around for around 8 years now, Solidity has just started to p
 \end{figure}
 
 \paragraph*{}
-The properties that interests the reader are that this programming language is \textbf{statically typed} and is converted into bytecode to run inside the Ethereum Virtual Machine (EVM). Being statically typed helps the compiler with static analysis, making possible the development of an optimization suite that performs both general and specific optimizations for EVM.
-
+The main properties that interests this thesis are that this programming language is \textbf{statically typed} and is converted into bytecode to run inside the Ethereum Virtual Machine (EVM). Being statically typed helps the compiler with static analysis, making possible the development of an optimization suite that performs both common optimizations and particular optimizations for EVM.
 
 \section{Solidity's Compiler and Optimizer}
 \paragraph*{}
-High level solidity code is sent to \lstinline[columns=fixed]{solc} binary, which stands for "solidity compiler". The user may or may not specify the usage of the optimizer with the \lstinline[columns=fixed]{--optimize} flag, which is enabled by default. Upon analyzing the compilation flow \ref*{fig:solc-compilation-flow}, we notice that there are some optional (yet recommended) steps to follow while compiling, which take advantage of the Yul IR and Abstract Syntax Trees, the latter being built for both the initial Solidity code and for the Yul IR. If we choose to optimize the code through Yul, then the \lstinline[columns=fixed]{--via-ir} must be specified, which is also enabled by default.
+High level solidity code is sent to \lstinline[columns=fixed]{solc} binary, which stands for ``solidity compiler''. The user may or may not specify the usage of the optimizer with the \lstinline[columns=fixed]{--optimize} flag, which is enabled by default. Upon analyzing the compilation flow \ref*{fig:solc-compilation-flow}, we notice that there are some optional (yet recommended) steps to follow while compiling, which take advantage of Yul (intermediate code representation for Solidity) and Abstract Syntax Trees, the latter being built for both the initial Solidity code and for the Yul IR. If we choose to optimize the code through Yul, then the \lstinline[columns=fixed]{--via-ir} must be specified, which is also enabled by default.
 
 \paragraph*{}
-When optimizing through Yul, the compilation flow will actually use \textbf{two optimizers}: the "new" one (Yul optimizer) and the "legacy" one (EVM bytecode optimizer). The reasoning behind this is that bytecode optimization should be as simple and straightforward as possible, this also being an engineering decision made by Solidity's team \cite{solidity-summit-2022-hari}. \lstinline[columns=fixed]{JUMP} instructions are especially tricky to handle while optimizing bytecode, making high level, semantic optimization (for example simplifying \lstinline[columns=fixed]{for} loops) more difficult.
+When optimizing through Yul, the compilation flow will actually use \textbf{two optimizers}: the "new" one (Yul optimizer) and the "legacy" one (EVM bytecode optimizer). The reasoning behind this is that bytecode optimization should be as simple and straightforward as possible, this also being an engineering decision made by Solidity's team that they explained in the Solidity Summit presentations, 2022. \lstinline[columns=fixed]{JUMP} instructions are especially tricky to handle while optimizing bytecode, making high level, semantic optimization (for example simplifying \lstinline[columns=fixed]{for} loops) more difficult.
 
-The advantage of having two optimizers is that it decouples work by a great deal. Low level assembly optimizations are done by the legacy optimizer \footnote[1]{Future work might also consist in unifying EVM and LLVM, bringing all of the work and optimization done to LLVM on Solidity's ground as well.}, and more complex optimizations, that require data flow analysis for example, are done directly on the Yul IR, which is later used to generate the efficient bytecode. This also helps by visually inspecting the generated Yul IR and making sure that its output is the expected one. Specifically for the team, it means that it makes unit testing and development much easier.
+\paragraph*{}
+The advantage of having two optimizers is that it decouples work by a great deal. Low level assembly optimizations are done by the legacy optimizer \footnote{Future work might also consist in unifying EVM and LLVM, bringing all of the work and optimization done to LLVM on Solidity's ground as well.}, and more complex optimizations, that require techniques such as data flow analysis, are done directly on the Yul IR, which is later used to generate the efficient bytecode. This also helps to visually inspect the generated Yul IR and making sure that its output is the expected one. Specifically for the team, it means that it makes unit testing and development much easier.
 
 \begin{figure}
     \centering
@@ -45,8 +45,9 @@ The advantage of having two optimizers is that it decouples work by a great deal
 
 \subsection*{Abstract Syntax Tree}
 \paragraph*{}
-\textbf{Abstract Syntax Trees (AST)} are often used to do a first analysis of the code instructions by walking the tree. This is often coupled with the Visitor Design Pattern, where the user implements what the \lstinline[columns=fixed]{visit} function should do for each type of node. These are \cite[``widely used in compilers to represent the structure of program code'']{ast-wiki}.
+\textbf{Abstract Syntax Trees (AST)} are often used to do a first analysis of the code instructions by walking the tree. This is often coupled with the Visitor Design Pattern, where the user implements what the \lstinline[columns=fixed]{visit} function should do for each type of node. They are often used in compilers to represent the structure of the code, to make isolated code changes and then re-generate code from the AST.
 
+\paragraph*{}
 On Solidity's territory, ASTs appear in two phases. First, an AST is generated from the unaltered Solidity code, while another AST is later generated from the Yul IR code. The AST nodes provide sufficient granularity to make a structural analysis simple enough, thanks to recursively analysing the children node of a root.
 
 \begin{figure}
@@ -89,6 +90,13 @@ Yul was designed around four main principles, as described by its official docum
 \paragraph*{}
 This was designed as an actual programming language, making it possible to generate valid EVM bytecode from Yul code. Of course, it is not recommended to write smart contracts in Yul, but one can do so to get more familiar with the dialect. It also takes on the property of its "parent" code, and is also statically typed as Solidity. This further eases the static analysis done by the compiler.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images/yul_ast_node_types.png}
+    \caption{Node types in the YUL AST. Node properties vary depending on their nature.}
+    \label{fig:yul-ast-node-types}
+\end{figure}
+
 
 \section{Other tools performing static analysis}
 \paragraph*{}
@@ -101,7 +109,7 @@ Built by Chao Peng, Sefa Akca and Ajitha Rajan, from University of Edinburgh, SI
 \begin{figure}
     \centering
     \includegraphics[width=15cm]{images/sif_workflow.png}
-    \caption{SIF workflow, captured from SIF: A Framework for Solidity Contract Instrumentation and Analysis\cite{sif}}
+    \caption{SIF workflow, captured from SIF: A Framework for Solidity Contract Instrumentation and Analysis \cite{sif}}
     \label{fig:sif-workflow}
 \end{figure}
 
@@ -122,7 +130,7 @@ What's common in both of the tools we've seen is the usage of Abstract Syntax Tr
     \label{fig:slither-architecture}
 \end{figure}
 
-\subsection*{Why enhancing the official optimizer is better}
+\subsection{Why focus on the official optimizer}
 \paragraph*{}
 The issue with such tools as SIF or Slither is that they get rapidly deprecated, since Solidity ground is so volatile, and they don't provide better optimization flows than Solidity's compiler does. Furthermore, integration is a bit more difficult, since it requires a separate optimization pipeline to be run through this intermediary tools, which just adds an additional burden to generating efficient bytecode.
 

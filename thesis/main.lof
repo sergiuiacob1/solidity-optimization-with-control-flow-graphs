@@ -2,10 +2,21 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Solidity interest according to Google web searches}}{7}{figure.3.1}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Solidity interest from 1st of January, 2014, to 1st of June, 2022, according to Google web searches}}{7}{figure.3.1}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Contract deployment per month in the past year, according to Dune Analytics}}{8}{figure.3.2}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Solidity compilation flow}}{9}{figure.3.3}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Solidity AST Example. The body of the function is an AST node itself, in which the statements are other AST nodes. Generated using AST Explorer.}}{10}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces SIF workflow, captured from SIF: A Framework for Solidity Contract Instrumentation and Analysis\cite {sif}}}{12}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Slither Architecture}}{13}{figure.3.6}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Node types in the YUL AST. Node properties vary depending on their nature.}}{11}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces SIF workflow, captured from SIF: A Framework for Solidity Contract Instrumentation and Analysis \cite {sif}}}{12}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Slither Architecture}}{13}{figure.3.7}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Example of a CFG built on top of a simple Rust program. The entry blocks allocate memory for variables, while the exit block act as garbage collection and terminate the execution flow. Source: Wikipedia}}{17}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Representing the inputs of a basic block using DAGs. Example of the peephole optimizer and where common subexpression eliminator could be used.}}{19}{figure.4.2}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Unoptimized vs. optimized YUL IR for Solidity code \ref {code:solidity-redundant-assignment}, order of optimizers: UnusedPruner then UnusedAssignEliminator}}{25}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Unoptimized vs. optimized YUL IR for Solidity code \ref {code:solidity-redundant-assignment}, order of optimizers: UnusedAssignEliminator then UnusedPruner}}{25}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Control flow types in YUL IR}}{27}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Optimized YUL IR using UnusedAssignEliminator then UnusedPruner. UnusedAssignEliminator does not handle termination flows while pruning}}{29}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Example of termination flow inside a YUL AST's basic block node. DeadCodeEliminator is used to prune unreachable code}}{29}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Full optimizer suite ran against code sample \ref {code:unused-assign-eliminator-handle-termination-flow}. The right hand side YUL IR handles termination flows within basic blocks for variable assignments and declarations.}}{30}{figure.5.6}%
 \addvspace {10\p@ }

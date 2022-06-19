@@ -4,65 +4,29 @@
 \section{Local optimizations}
 Optimizing for loops.
 
-\begin{lstlisting}[language=solidity]
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.7;
+% \begin{lstlisting}[language=bash]
+% sergiuiacob@Sergius-MacBook-Pro dataset % solhint variable_declaration_loops.sol
 
-contract VariableInsideLoop {
-    function declareVariableInsideLoop() public pure {
-        for (uint i = 1; i <= 1000; i++) {
-            uint x = i * i;
-        }
-    }
+% \end{lstlisting}
 
-    function declareVariableOutsideLoop() public pure {
-        uint x;
-        for (uint i = 1; i <= 1000; i++) {
-            x = i * i;
-        }
-    }
-}
-\end{lstlisting}
+% solhint outputs nothing – it sees no issues
 
-\^ Compiled with solidity 0.8.7, no optimizations enabled.
-inside loop gas cost: 420223 gas
-outside loop gas cost: 415250 gas
+% nor does solium (eth lint)
 
-with 200 optimization runs:
-inside loop gas cost: 237215 gas
-outside loop gas cost: 232242 gas
-
-Still lower!
-
-\begin{lstlisting}[language=bash]
-sergiuiacob@Sergius-MacBook-Pro dataset % solhint variable_declaration_loops.sol
-
-\end{lstlisting}
-
-solhint outputs nothing – it sees no issues
-
-nor does solium (eth lint)
+% ^ nu mai stiu daca asta e valabil
 
 
-\begin{lstlisting}[language=bash]
-sergiuiacob@Sergius-MacBook-Pro dataset % solium -f variable_declaration_loops.sol
+% \begin{lstlisting}[language=bash]
+% sergiuiacob@Sergius-MacBook-Pro dataset % solium -f variable_declaration_loops.sol
 
-No issues found.
+% No issues found.
 
-sergiuiacob@Sergius-MacBook-Pro dataset % solium -f variable_declaration_if.sol
+% sergiuiacob@Sergius-MacBook-Pro dataset % solium -f variable_declaration_if.sol
 
-No issues found.
+% No issues found.
 
-\end{lstlisting}
+% \end{lstlisting}
 
-
-variable declaration inside if: 21217 gas
-variable declaration outside if: 21274 gas
-in this case, outside consumes more gas
-
-200 optimization runs did not change anything
-
-> DISPATCH GAS!!!
 
 
 
@@ -77,7 +41,7 @@ TODOs
 * pe termination3.sol
   * exemplu ce se intampla cand rulez doar 'Dru'
   * exemplu cum se simplifica si mai mult (datorita static analysis) cand rulez toata suita de optimizatori
-
+* \textwidth in loc de 15cm
 
 
   https://dune.com/hagaetc/contracts-deployed-on-ethereum-per-month
@@ -96,6 +60,7 @@ Resurse utile
 * https://etherscan.io/contractsVerified
   * statistici cu cat \% din contracte folosesc solc 0.8
 * tool vizualizare relatii functii din contracte https://piet.blockchains.com/?container=examples%2Fexport1562664060589.piet.json 
+* https://cs.au.dk/~amoeller/spa/spa.pdf
 
 
 De adaugat in teza
@@ -173,11 +138,7 @@ Proprietati pentru solidity optimizer (on YUL)
   * loop initialization body is moved before the loop
   * majoritatea optimizarilor listate in documentatia oficiala (0.8.14) graviteaza in jurul precalcularii constantelor si propagarii acestora
 
-----din https://homepages.dcc.ufmg.br/~fernando/classes/dcc888/ementa/slides/ControlFlowGraphs.pdf
 
-* first instruction of a block == leader (multiple moduri de a identifica leaders)
-* basic blocks pot fi construite in functie de leader-ii identificati
-  * un basic block incepe la primul leader si se termina la urmatorul leader
 
 Idei cu ce pot face
 * CFG intre contracte?
@@ -207,3 +168,15 @@ Pentru prezentare, Proof of Concept:
 How does LLVM work? Let's take that for example
 * Virtual Register Allocation (ca exemplu)
 https://homepages.dcc.ufmg.br/~fernando/classes/dcc888/ementa/slides/ControlFlowGraphs.pdf
+
+
+
+
+
+Solidity is a relatively new technology, when compared to already existing programming languages widely used in the market. As stated by the Solidity team itself, "the optimizer is under heavy development" \cite{solidity-optimizer}, which gives plenty of room for contributors to bring their own performance enhancements.
+
+I plan on being one of those contributors, starting from the Solidity code and the AST built by the Solidity compiler itself. I will then evaluate the given inputs and focus on building a specific, low resolution Control Flow Graph, by which memory allocation and cpu cycles can be thoroughly inspected. This would allow for a technical deep dive into the insides of an Ethereum smart contract, which in return can provide useful insights to the user as to how the code can be optimized.
+
+As compared to the other existing tools, this thesis will focus on the latest stable version of Solidity (0.8) and will be built around a set principles focused on scalable, maintainable code analysis tools. Security will also not be the main concern, as there is already plenty of interest in that area.
+
+

@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1655744179 "/Users/sergiuiacob/solidity-optimization-with-control-flow-graphs/thesis/main.tex" "main.pdf" "main" 1655744183
-  "/Users/sergiuiacob/solidity-optimization-with-control-flow-graphs/thesis/main.tex" 1655744174 9108 b4139c94023089a77410d26a9b36e33b ""
+["pdflatex"] 1655747631 "/Users/sergiuiacob/solidity-optimization-with-control-flow-graphs/thesis/main.tex" "main.pdf" "main" 1655747635
+  "/Users/sergiuiacob/solidity-optimization-with-control-flow-graphs/thesis/main.tex" 1655744387 9108 b4139c94023089a77410d26a9b36e33b ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/courier/pcrb7t.tfm" 1136768653 960 4ab65358b8406f30ef5496c8c096d22b ""
@@ -110,7 +110,7 @@
   "chapters/chapter1.tex" 1655702287 11751 fb6e925a957fd5213120460a16abf20c ""
   "chapters/chapter2.tex" 1655701149 12850 095368bd3935c6fdfd6231ef46403d5c ""
   "chapters/chapter3.tex" 1655701351 19410 501d03e0ef2585c59f6af610f15c44d7 ""
-  "chapters/chapter4.tex" 1655743646 7227 626e2194104c898cf4d22f3e13896a57 ""
+  "chapters/chapter4.tex" 1655747630 7223 895c7948e7c408cf2dc3b3f7f95d1978 ""
   "chapters/conclusions.tex" 1655741983 1242 a932b484a8ea87ad59f4aa97d488ff46 ""
   "chapters/contributions.tex" 1655743359 3815 b11a0f1f09fe4c82e03082c1324d9e90 ""
   "chapters/introduction.tex" 1655648087 5031 33664113d1efc0f2e5650ad3472fa5c7 ""
@@ -133,11 +133,11 @@
   "images/unused_assign_eliminator_handle_termination_flow.png" 1655634086 563462 cfa9d90bf406f3e181fbf845741d1ed5 ""
   "images/unused_assign_eliminator_termination2.png" 1655627774 152011 fa2ca55385cf0548142c7382ca224e7e ""
   "images/yul_ast_node_types.png" 1655575114 212517 8846f113c44cc80fd3449dc156f50c17 ""
-  "main.aux" 1655744183 16280 e7141e1573b0cf2a2df17536f2c271b3 "pdflatex"
-  "main.lof" 1655744183 3133 77d951f38d010652e82b00c7cf000ef3 "pdflatex"
-  "main.out" 1655744183 6778 1dc85a180f11e06430c62127145660ee "pdflatex"
-  "main.tex" 1655744174 9108 b4139c94023089a77410d26a9b36e33b ""
-  "main.toc" 1655744183 3448 70160102510083dca64019e51513d205 "pdflatex"
+  "main.aux" 1655747635 16280 e7141e1573b0cf2a2df17536f2c271b3 "pdflatex"
+  "main.lof" 1655747635 3133 77d951f38d010652e82b00c7cf000ef3 "pdflatex"
+  "main.out" 1655747635 6778 1dc85a180f11e06430c62127145660ee "pdflatex"
+  "main.tex" 1655744387 9108 b4139c94023089a77410d26a9b36e33b ""
+  "main.toc" 1655747635 3448 70160102510083dca64019e51513d205 "pdflatex"
   "solidity-highlighting.tex" 1655638073 2779 ed2088c76160be321f7cfca47889cfbe ""
   (generated)
   "main.aux"

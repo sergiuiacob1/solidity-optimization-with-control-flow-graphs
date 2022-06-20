@@ -12,6 +12,7 @@
 \usepackage[unicode]{hyperref}  % references from the table of contents
 \usepackage{xcolor}             % to define colors
 \usepackage{wrapfig}
+\usepackage[toc,page]{appendix}
 
 \setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{3}
@@ -109,4 +110,199 @@
 
     \input{chapters/conclusions}
     \input{chapters/bibliography}
+
+    \begin{appendices}
+    \chapter{Termination1 contract}
+    \begin{lstlisting}[language=Solidity]
+        // SPDX-License-Identifier: MIT
+        pragma solidity ^0.8.14;
+        
+        contract Termination1 {
+            uint persistent_var;
+            event FunctionCalled(string f);
+        
+            function assignBeforeTermination() public {
+                emit FunctionCalled("assignBeforeTermination");
+                uint balance;
+                balance = 7919;
+                return;
+            }
+        }            
+    \end{lstlisting}
+
+    \chapter{Termination2 contract}
+    \begin{lstlisting}[language=Solidity]
+        // SPDX-License-Identifier: MIT
+        pragma solidity ^0.8.14;
+        
+        contract Termination2 {
+            uint persistent_var;
+            event FunctionCalled(string f);
+            event BalanceIsEmpty();
+        
+            function assignBeforeTermination(uint x) public {
+                emit FunctionCalled("assignBeforeTermination");
+                uint balance;
+                if (f1(x) == true) {
+                    balance = 10007;
+                    return;
+                }
+                if (balance == 0) {
+                    emit BalanceIsEmpty();
+                }
+                return;
+            }
+        
+            function f1(uint x) public pure returns (bool) {
+                return x > 10;
+            }
+        }                    
+    \end{lstlisting}
+
+    \chapter{Termination3 contract}
+    \begin{lstlisting}[language=Solidity]
+        // SPDX-License-Identifier: MIT
+        pragma solidity ^0.8.14;
+
+        contract Termination3 {
+            uint persistent_var;
+            event FunctionCalled(string f);
+            event BalanceIsEmpty();
+        
+            function assignBeforeTermination(uint x) public {
+                emit FunctionCalled("assignBeforeTermination");
+                uint balance;
+                balance = 10006;
+                if (f1(x) == true) {
+                    balance = 10007;
+                    return;
+                }
+                if (balance == 0) {
+                    emit BalanceIsEmpty();
+                }
+                return;
+            }
+        
+            function f1(uint x) public pure returns (bool) {
+                return x > 10;
+            }
+        }                   
+    \end{lstlisting}
+
+    \chapter{Termination4 contract}
+    \begin{lstlisting}[language=Solidity]
+        // SPDX-License-Identifier: MIT
+        pragma solidity ^0.8.14;
+
+        contract Termination4 {
+            uint persistent_var;
+            event FunctionCalled(string f);
+        
+            function assignBeforeTermination(uint x) public {
+                emit FunctionCalled("assignBeforeTermination");
+                persistent_var = 1;
+                if (f1(x) == true) {
+                    persistent_var = 2;
+                    return;
+                }
+                return;
+            }
+        
+            function f1(uint x) public pure returns (bool) {
+                return x > 10;
+            }
+        }                  
+    \end{lstlisting}
+
+    \chapter{Termination5 contract}
+    \begin{lstlisting}[language=Solidity]
+        // SPDX-License-Identifier: MIT
+        pragma solidity ^0.8.14;
+
+        contract Termination5 {
+            uint persistent_var;
+            event FunctionCalled(string f);
+            event BalanceIsEmpty();
+        
+            function assignBeforeTermination(uint x) public {
+                emit FunctionCalled("assignBeforeTermination");
+                uint balance;
+                if (f1(x) == true) {
+                    balance = f2(x);
+                    return;
+                }
+                if (balance == 0) {
+                    emit BalanceIsEmpty();
+                }
+                return;
+            }
+            function f1(uint x) public pure returns (bool) {
+                return x > 10;
+            }
+            function f2(uint x) public pure returns (uint) {
+                return x * 2;
+            }
+        }        
+    \end{lstlisting}
+
+    \chapter{Termination6 contract}
+    \begin{lstlisting}[language=Solidity]
+        // SPDX-License-Identifier: MIT
+        pragma solidity ^0.8.14;
+        contract Termination6 {
+            uint persistent_var;
+            event FunctionCalled(string f);
+            event BalanceIsEmpty();
+        
+            function assignBeforeTermination(uint x) public {
+                emit FunctionCalled("assignBeforeTermination");
+                uint balance;
+                if (f1(x) == true) {
+                    balance = f2(x);
+                    return;
+                }
+                if (balance == 0) {
+                    emit BalanceIsEmpty();
+                }
+                return;
+            }
+            function f1(uint x) public pure returns (bool) {
+                return x > 10;
+            }
+            function f2(uint x) public returns (uint) {
+                persistent_var = 1;
+                return x * 2;
+            }
+        }                   
+    \end{lstlisting}
+
+    \chapter{Termination7 contract}
+    \begin{lstlisting}[language=Solidity]
+        // SPDX-License-Identifier: MIT
+        pragma solidity ^0.8.14;
+
+        contract Termination7 {
+            uint persistent_var;
+            event FunctionCalled(string f);
+            event FunctionEnd(string f);
+            function assignBeforeTermination(uint x) public {
+                emit FunctionCalled("assignBeforeTermination");
+                uint a; uint b; uint c;
+                if (f1(x) == true) {
+                    a = x;
+                    b = a;
+                    c = b;
+                    a = c;
+                    return;
+                }
+                return;
+            }
+            function f1(uint x) public pure returns (bool) {
+                return x > 10;
+            }
+        }                  
+    \end{lstlisting}
+    \end{appendices}
+
+
 \end{document}

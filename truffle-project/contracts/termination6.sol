@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.14;
 
-contract Termination {
+// unused assignment where value comes from function that changes state
+
+contract Termination6 {
     uint persistent_var;
     event FunctionCalled(string f);
     event BalanceIsEmpty();
@@ -11,7 +13,7 @@ contract Termination {
         uint balance;
         
         if (f1(x) == true) {
-            balance = 10007;
+            balance = f2(x);
             return;
         }
 
@@ -23,5 +25,10 @@ contract Termination {
 
     function f1(uint x) public pure returns (bool) {
         return x > 10;
+    }
+
+    function f2(uint x) public returns (uint) {
+        persistent_var = 1;
+        return x * 2;
     }
 }

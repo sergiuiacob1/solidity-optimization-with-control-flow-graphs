@@ -31,5 +31,13 @@
 \contentsline {section}{\numberline {5.3}Handling termination flows}{27}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Pruning redundant termination flows}{30}{section.5.4}%
 \contentsline {chapter}{\numberline {6}Validation and benchmarking}{32}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusions}{34}{chapter.7}%
-\contentsline {chapter}{Bibliography}{35}{chapter*.84}%
+\contentsline {chapter}{\numberline {7}Conclusions}{35}{chapter.7}%
+\contentsline {chapter}{Bibliography}{36}{chapter*.86}%
+\contentsline {chapter}{Appendices}{37}{section*.87}%
+\contentsline {chapter}{\numberline {A}Termination1 contract}{38}{appendix.1.A}%
+\contentsline {chapter}{\numberline {B}Termination2 contract}{39}{appendix.1.B}%
+\contentsline {chapter}{\numberline {C}Termination3 contract}{40}{appendix.1.C}%
+\contentsline {chapter}{\numberline {D}Termination4 contract}{41}{appendix.1.D}%
+\contentsline {chapter}{\numberline {E}Termination5 contract}{42}{appendix.1.E}%
+\contentsline {chapter}{\numberline {F}Termination6 contract}{43}{appendix.1.F}%
+\contentsline {chapter}{\numberline {G}Termination7 contract}{44}{appendix.1.G}%

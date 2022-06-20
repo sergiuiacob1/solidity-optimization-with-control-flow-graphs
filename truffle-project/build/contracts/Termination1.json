@@ -1,0 +1,357 @@
+{
+  "contractName": "Termination1",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "f",
+          "type": "string"
+        }
+      ],
+      "name": "FunctionCalled",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "assignBeforeTermination",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.14+commit.503dde7e.mod\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"f\",\"type\":\"string\"}],\"name\":\"FunctionCalled\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"assignBeforeTermination\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/termination1.sol\":\"Termination1\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"project:/contracts/termination1.sol\":{\"keccak256\":\"0x0cc881cfe9492534d398160469f2a01db49ce9cbc4e671d249a009bdf3624344\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://a73f92cca9ca5beafa7fb669a57342b147f40c478e24dfeba4e5373c6226a694\",\"dweb:/ipfs/QmWJpMSHP6Ua4G3GKwiFnC2A9hBpvwKWweL5Wdb1DCA5Vf\"]}},\"version\":1}",
+  "bytecode": "0x608080604052346100155760cb908161001b8239f35b600080fdfe6080806040526004361015601257600080fd5b600090813560e01c63f07b45a314602857600080fd5b346091578160031936011260915760608160207fac7c932dfed5a12f8cee69b87b1db28759f9abab0760d37031670980a55a21689352601760208201527f61737369676e4265666f72655465726d696e6174696f6e0000000000000000006040820152a1604051f35b5080fdfea26469706673582212208a08c88966084e0f5f796a5082ad59d7c0fbc6b59682243e4f4664917b3cd23964736f6c634300080e0033",
+  "deployedBytecode": "0x6080806040526004361015601257600080fd5b600090813560e01c63f07b45a314602857600080fd5b346091578160031936011260915760608160207fac7c932dfed5a12f8cee69b87b1db28759f9abab0760d37031670980a55a21689352601760208201527f61737369676e4265666f72655465726d696e6174696f6e0000000000000000006040820152a1604051f35b5080fdfea26469706673582212208a08c88966084e0f5f796a5082ad59d7c0fbc6b59682243e4f4664917b3cd23964736f6c634300080e0033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "58:259:1:-:0;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "58:259:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;205:41;58:259;;;;;;;;;;;;205:41;58:259;;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.14;\n\ncontract Termination1 {\n    uint persistent_var;\n    event FunctionCalled(string f);\n\n    function assignBeforeTermination() public {\n        emit FunctionCalled(\"assignBeforeTermination\");\n        uint balance;\n        balance = 7919;\n        return;\n    }\n}\n",
+  "sourcePath": "/Users/sergiuiacob/solidity-optimization-with-control-flow-graphs/truffle-project/contracts/termination1.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/termination1.sol",
+    "exportedSymbols": {
+      "Termination1": [
+        57
+      ]
+    },
+    "id": 58,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 34,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".14"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:24:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Termination1",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 57,
+        "linearizedBaseContracts": [
+          57
+        ],
+        "name": "Termination1",
+        "nameLocation": "67:12:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 36,
+            "mutability": "mutable",
+            "name": "persistent_var",
+            "nameLocation": "91:14:1",
+            "nodeType": "VariableDeclaration",
+            "scope": 57,
+            "src": "86:19:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 35,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "86:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "eventSelector": "ac7c932dfed5a12f8cee69b87b1db28759f9abab0760d37031670980a55a2168",
+            "id": 40,
+            "name": "FunctionCalled",
+            "nameLocation": "117:14:1",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 39,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 38,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "f",
+                  "nameLocation": "139:1:1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 40,
+                  "src": "132:8:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 37,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "132:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "131:10:1"
+            },
+            "src": "111:31:1"
+          },
+          {
+            "body": {
+              "id": 55,
+              "nodeType": "Block",
+              "src": "190:125:1",
+              "statements": [
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "hexValue": "61737369676e4265666f72655465726d696e6174696f6e",
+                        "id": 44,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "220:25:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_3c4e1a1d2bacf0863f9a87b0ceb32a722191aacb4a607a424404ed0a2745822c",
+                          "typeString": "literal_string \"assignBeforeTermination\""
+                        },
+                        "value": "assignBeforeTermination"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_3c4e1a1d2bacf0863f9a87b0ceb32a722191aacb4a607a424404ed0a2745822c",
+                          "typeString": "literal_string \"assignBeforeTermination\""
+                        }
+                      ],
+                      "id": 43,
+                      "name": "FunctionCalled",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 40,
+                      "src": "205:14:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 45,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "205:41:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 46,
+                  "nodeType": "EmitStatement",
+                  "src": "200:46:1"
+                },
+                {
+                  "assignments": [
+                    48
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 48,
+                      "mutability": "mutable",
+                      "name": "balance",
+                      "nameLocation": "261:7:1",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 55,
+                      "src": "256:12:1",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 47,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "256:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 49,
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "256:12:1"
+                },
+                {
+                  "expression": {
+                    "id": 52,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 50,
+                      "name": "balance",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 48,
+                      "src": "278:7:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "hexValue": "37393139",
+                      "id": 51,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "288:4:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_7919_by_1",
+                        "typeString": "int_const 7919"
+                      },
+                      "value": "7919"
+                    },
+                    "src": "278:14:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 53,
+                  "nodeType": "ExpressionStatement",
+                  "src": "278:14:1"
+                },
+                {
+                  "functionReturnParameters": 42,
+                  "id": 54,
+                  "nodeType": "Return",
+                  "src": "302:7:1"
+                }
+              ]
+            },
+            "functionSelector": "f07b45a3",
+            "id": 56,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "assignBeforeTermination",
+            "nameLocation": "157:23:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 41,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "180:2:1"
+            },
+            "returnParameters": {
+              "id": 42,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "190:0:1"
+            },
+            "scope": 57,
+            "src": "148:167:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 58,
+        "src": "58:259:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:286:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.14+commit.503dde7e.mod.Darwin.appleclang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x5A6BE3971d04C2c3eeE248Cad54d64046bdddfB8",
+      "transactionHash": "0xd198d51650c4195f7405f9410421d8e177fc29742cc12b3e772000448b5a9d8f"
+    }
+  },
+  "schemaVersion": "3.4.7",
+  "updatedAt": "2022-06-20T15:45:53.946Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

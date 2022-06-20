@@ -22,7 +22,7 @@ In this thesis, several edge cases are presented that tricked the optimizer, and
 
 \section{Reducing gas usage of smart contracts}
 \paragraph*{}
-The quality of Solidity's compiler and optimizer is evaluated by the \textbf{gas usage} of the smart contract, both deployment on the network and the cost of running a function within the deployed contract. With the optimizations mentioned above, the optimizer \textbf{generated code that requires less gas}, which means less ethereum, which means smaller costs for the user.
+The quality of Solidity's compiler and optimizer is evaluated by the \textbf{gas usage} of the smart contract, both deployment on the network and the cost of running a function within the deployed contract. With the optimizations mentioned above, the optimizer \textbf{generated code that requires less gas}, which means less ethereum, which means smaller costs for the user. Particularly for a test suite that captures the edge cases found, contract deployment saw an average saving of $2300$ gas ($\approx 2\%$), while execution of an isolated function taking advantage of the implemented improvements saw savings of up to $60$ gas ($\approx 0.2\%$).
 
 \paragraph*{}
 Multiply any small, seemly insignificant gas improvement by the millions of smart contracts on the Ethereum blockchain and you end up with an overall significant cost reduction in code execution. Therefore, external contributions as these will sum up to bring a real difference in code quality\footnote{We will dive deeper into which smart contracts will benefit from these optimizations and how optimization steps give more opportunities to other optimization steps in the latter chapters.}.

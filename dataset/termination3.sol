@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.14;
 
-contract Termination {
+// redundant assignments in terminating control flows and outside the terminating control flow
+
+contract Termination3 {
     uint persistent_var;
     event FunctionCalled(string f);
     event BalanceIsEmpty();

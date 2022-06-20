@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.14;
 
-// unused assignment where value comes from function that changes state
-
-contract Termination6 {
+contract Termination3 {
     uint persistent_var;
     event FunctionCalled(string f);
     event BalanceIsEmpty();
@@ -12,8 +10,9 @@ contract Termination6 {
         emit FunctionCalled("assignBeforeTermination");
         uint balance;
         
+        balance = 10006;
         if (f1(x) == true) {
-            balance = f2(x);
+            balance = 10007;
             return;
         }
 
@@ -25,10 +24,5 @@ contract Termination6 {
 
     function f1(uint x) public pure returns (bool) {
         return x > 10;
-    }
-
-    function f2(uint x) public returns (uint) {
-        persistent_var = 1;
-        return x * 2;
     }
 }

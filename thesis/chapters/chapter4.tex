@@ -10,3 +10,60 @@ A testing experiment was done using the online Etherscan dataset, which contains
 
 \paragraph*{}
 While validation was successful, contracts from the Etherscan network (at the time of writing this thesis) showed no benefits in the gas estimates of the contract construction. This might also be because most of the contracts returned ``infinite'' as a gas estimate, which is due to instructions such as loops in the code or recursive function calls. This is to be expected, since the edge cases described in this thesis are most likely the result of code mistakes on the developers' side, mistakes which often get caught during steps of code review. However, it is not excluded that future changes to the optimizer codebase will take advantage of the enhancements described in the previous chapter.
+
+\begin{table}
+\begin{center}
+
+\begin{tabular}{|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|p{2.8cm}|}
+    \hline
+    Contract & $S$ construction gas cost & $S'$ construction gas cost & $S$ func. execution gas cost & $S'$ func. execution gas cost \\ 
+    \hline
+    Termination1 & 97175 & 97175 & 22777 & 22777 \\  
+    \hline
+    Termination2 & 126183 & \textbf{124035(-2148)} & 23789 & \textbf{23769(-20)} \\  
+    \hline
+    Termination3 & 126411 & \textbf{110367(-16044)} & 23026 & \textbf{22966(-60)}\\  
+    \hline
+    Termination4 & 114879 & 114879 & 45113 & 45113 \\  
+    \hline
+    Termination5 & 147717 & \textbf{145353(-2364)} & 23794 & \textbf{23771(-23)} \\  
+    \hline
+    Termination6 & 148785 & \textbf{146421(-2364)} & 23794 & \textbf{23771(-23)} \\  
+    \hline
+    Termination7 & 112947 & \textbf{110367(-2580)} & 23007 & \textbf{22966(-41)} \\  
+    \hline
+\end{tabular}
+\end{center}
+\caption{\label{table:test-suite} Gas costs for contract deployment and execution of the \lstinline[columns=fixed]{assignBeforeTermination} function. Gas dispatch gas does not affect this example. $S$ represents the official 0.8.14 compiler, and $S'$ is the improved compiler.}
+\end{table}
+
+
+% (97175 - 97175) / 97175             
+% (22777 - 22777) / 22777
+% (126183 - 124035) / 126183 -- 0,01702289532             
+% (23789 - 23769) / 23789 -- 0,0008407247047
+% (126411 - 110367) / 126411 -- 0,1269193346           
+% (23026 - 22966) / 23026 -- 0,002605750022
+% (114879 - 114879) / 114879
+% (45113 - 45113) / 45113
+% (147717 - 145353) / 147717 -- 0,0160035744
+% (23794 - 23771) / 23794 -- 0,0009666302429
+% (148785 - 146421) / 148785 -- 0,01588869846
+% (23794 - 23771) / 23794 -- 0,0009666302429
+% (112947 - 110367) / 112947 -- 0,02284257218
+% (23007 - 22966) / 23007 -- 0,001782066328
+
+\paragraph*{}
+The test suite \footnote{Contracts can be inspected as annexes to this thesis.} in table \ref{table:test-suite} contains a set of 7 contracts which were deployed on a test network using Truffle version 5.5.15. These were used to ascertain the savings in gas usage for the given edge cases. The \lstinline[columns=fixed]{assignBeforeTermination} function has the following properties in each contract:
+\begin{enumerate}
+    \item Termination1: contains a redundant assignment with no branching flow that terminates.
+    \item Termination2: contains a redundant assignment within a branching flow that terminates; the variable is also used in a different flow.
+    \item Termination3: contains redundant assignments both outside the scope of the branching flow that terminates, as well as within the scope of the basic block.
+    \item Termination4: contains assignments to persistent variables in the contract, which should be kept even if the basic block that contain them terminates as they maintain contract state.
+    \item Termination5: contains a redundant assignment as in Termination2, but the values comes from the execution of a function \lstinline[columns=fixed]{f2}. 
+    \item Termination6: same as Termination5, but the function \lstinline[columns=fixed]{f2} also changes the values of a state variable.
+    \item Termination7: contains cyclic redundant assignments that, after pruning, leaves the body of the \lstinline[columns=fixed]{if} body with a trailing \lstinline[columns=fixed]{leave} statement that should be pruned.
+\end{enumerate}
+
+\paragraph*{}
+The case in Termination1 is already handled by version 0.8.14 of the compiler, so there is no additional gas saving there, as expected. Such is the case for Termination4, which is expected, because assignments to state variables should not be pruned. For the rest of the contracts, we observe an improvement in gas usage for both contract deployment (construction) as well as execution cost for the \lstinline[columns=fixed]{assignBeforeTermination} function. Gas deployment savings range from $\approx2000$ gas all the way to an impressive $16044$ gas. Execution of \lstinline[columns=fixed]{assignBeforeTermination} brought savings from $20$ gas to $60$ gas for these examples. Considering the current gwei cost of gas, that means savings up to $3180$ gwei for the execution of the function, which translates to $0,00000318$ ETH, approximately $0,369198$ cents \footnote{Savings were computed with by consulting Etherscan gas tracker and crypto.com at the time of writing this paragraph. Average gas cost was 53 gwei, and ETH value was 1161 USD.}. Excluding the outlier of $16044$ saved gas, contract deployment averaged around $2300$ gas less, which, with the same currency conversion, translates to around $14$ cents saved per contract deployment.

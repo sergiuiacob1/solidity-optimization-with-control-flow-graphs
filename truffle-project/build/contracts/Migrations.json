@@ -12,7 +12,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -25,7 +26,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -41,9 +43,9 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.14+commit.80d49f37\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"last_completed_migration\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"completed\",\"type\":\"uint256\"}],\"name\":\"setCompleted\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Migrations.sol\":\"Migrations\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"project:/contracts/Migrations.sol\":{\"keccak256\":\"0x7eaedbb1a3e4e0f585d9063393872f88ded247ca3c3c3c8492ea18e7629a6411\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4a3eb571cee910095df65a06a1c1d3f89187c72a3c184ef87a7538d9aa39ad07\",\"dweb:/ipfs/QmdqR3vrSSGR49qFGZr49Mb39z7dgD6tSzEDoaqtM31o61\"]}},\"version\":1}",
-  "bytecode": "0x6080806040523461002857600080546001600160a01b03191633179055610155908161002e8239f35b600080fdfe608080604052600436101561001357600080fd5b6000803560e01c918263445df0ac14610074575081638da5cb5b1461004b575063fdacd57614610043575b600080fd5b61003e610092565b34610071578060031936011261007157546040516001600160a01b039091168152602090f35b80fd5b3461008e578160031936011261008e576020906001548152f35b5080fd5b503461003e57602036600319011261003e576000546001600160a01b031633036100be57600435600155005b60405162461bcd60e51b815260206004820152603360248201527f546869732066756e6374696f6e206973207265737472696374656420746f207460448201527234329031b7b73a3930b1ba13b99037bbb732b960691b6064820152608490fdfea2646970667358221220aa4b40762047241ba5c61dc0f8cc5a120c7cd30d80b00b4a998aec41063989e064736f6c634300080e0033",
-  "deployedBytecode": "0x608080604052600436101561001357600080fd5b6000803560e01c918263445df0ac14610074575081638da5cb5b1461004b575063fdacd57614610043575b600080fd5b61003e610092565b34610071578060031936011261007157546040516001600160a01b039091168152602090f35b80fd5b3461008e578160031936011261008e576020906001548152f35b5080fd5b503461003e57602036600319011261003e576000546001600160a01b031633036100be57600435600155005b60405162461bcd60e51b815260206004820152603360248201527f546869732066756e6374696f6e206973207265737472696374656420746f207460448201527234329031b7b73a3930b1ba13b99037bbb732b960691b6064820152608490fdfea2646970667358221220aa4b40762047241ba5c61dc0f8cc5a120c7cd30d80b00b4a998aec41063989e064736f6c634300080e0033",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.14+commit.503dde7e.mod\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"last_completed_migration\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"completed\",\"type\":\"uint256\"}],\"name\":\"setCompleted\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Migrations.sol\":\"Migrations\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"project:/contracts/Migrations.sol\":{\"keccak256\":\"0x7eaedbb1a3e4e0f585d9063393872f88ded247ca3c3c3c8492ea18e7629a6411\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4a3eb571cee910095df65a06a1c1d3f89187c72a3c184ef87a7538d9aa39ad07\",\"dweb:/ipfs/QmdqR3vrSSGR49qFGZr49Mb39z7dgD6tSzEDoaqtM31o61\"]}},\"version\":1}",
+  "bytecode": "0x6080806040523461002857600080546001600160a01b03191633179055610155908161002e8239f35b600080fdfe608080604052600436101561001357600080fd5b6000803560e01c918263445df0ac14610074575081638da5cb5b1461004b575063fdacd57614610043575b600080fd5b61003e610092565b34610071578060031936011261007157546040516001600160a01b039091168152602090f35b80fd5b3461008e578160031936011261008e576020906001548152f35b5080fd5b503461003e57602036600319011261003e576000546001600160a01b031633036100be57600435600155005b60405162461bcd60e51b815260206004820152603360248201527f546869732066756e6374696f6e206973207265737472696374656420746f207460448201527234329031b7b73a3930b1ba13b99037bbb732b960691b6064820152608490fdfea2646970667358221220af19c20fa5db10cc638702e4156d357db86e8897130cf04977fb6c53f47c658864736f6c634300080e0033",
+  "deployedBytecode": "0x608080604052600436101561001357600080fd5b6000803560e01c918263445df0ac14610074575081638da5cb5b1461004b575063fdacd57614610043575b600080fd5b61003e610092565b34610071578060031936011261007157546040516001600160a01b039091168152602090f35b80fd5b3461008e578160031936011261008e576020906001548152f35b5080fd5b503461003e57602036600319011261003e576000546001600160a01b031633036100be57600435600155005b60405162461bcd60e51b815260206004820152603360248201527f546869732066756e6374696f6e206973207265737472696374656420746f207460448201527234329031b7b73a3930b1ba13b99037bbb732b960691b6064820152608490fdfea2646970667358221220af19c20fa5db10cc638702e4156d357db86e8897130cf04977fb6c53f47c658864736f6c634300080e0033",
   "immutableReferences": {},
   "generatedSources": [],
   "deployedGeneratedSources": [],
@@ -450,11 +452,19 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.8.14+commit.80d49f37.Darwin.appleclang"
+    "version": "0.8.14+commit.503dde7e.mod.Darwin.appleclang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x5cF25Fa9Ad1ecDaFE91C8d2B62C55C80c42830D3",
+      "transactionHash": "0x0a768f90d067467308aa09541a44e0be0ffefb91ba4a33ee543e0eb465fd2d6b"
+    }
+  },
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-06-01T16:58:10.835Z",
+  "updatedAt": "2022-06-20T15:45:53.946Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -48,7 +48,7 @@ The advantage of having two optimizers is that it decouples work by a great deal
 \textbf{Abstract Syntax Trees (AST)} are often used to do a first analysis of the code instructions by walking the tree. This is often coupled with the Visitor Design Pattern, where the user implements what the \lstinline[columns=fixed]{visit} function should do for each type of node. They are often used in compilers to represent the structure of the code, to make isolated code changes and then re-generate code from the AST.
 
 \paragraph*{}
-On Solidity's territory, ASTs appear in two phases. First, an AST is generated from the unaltered Solidity code, while another AST is later generated from the Yul IR code. The AST nodes provide sufficient granularity to make a structural analysis simple enough, thanks to recursively analysing the children node of a root.
+Solidity uses ANTLR (ANother Tool for Language Recognition) to generate its AST. On Solidity's territory, ASTs appear in two phases. First, an AST is generated from the unaltered Solidity code, while another AST is later generated from the Yul IR code. The AST nodes provide sufficient granularity to make a structural analysis simple enough, thanks to recursively analysing the children node of a root.
 
 \begin{figure}
     \centering
@@ -58,7 +58,7 @@ On Solidity's territory, ASTs appear in two phases. First, an AST is generated f
 \end{figure}
 
 \paragraph*{}
-ASTs are very common in static analysis and is often times coupled with a grammar (or dialect) that enforces different node types and node structure in the tree. There are a variety of tools that use ASTs to do code analysis of their own.
+ASTs are very common in static analysis and are often times coupled with a grammar (or dialect) that enforces different node types and node structure in the tree. There are a variety of tools that use ASTs to do code analysis of their own.
 
 % ASTs generated from Solidity code have been used by a variety of tools to inspect code, one of which is Solidity Instrumentation Framework (SIF) \ref{fig:sif-workflow}. The framework builds an internal representation (in C) of the AST nodes, bringing an additional set of features such as symbol renaming or function listing to the table. This works by exposing the \lstinline[columns=fixed]{visit} function to the user, each node being visited with the pattern implemented by the user.
 
@@ -68,7 +68,7 @@ ASTs are very common in static analysis and is often times coupled with a gramma
 \textbf{Yul}, former name Julia, is an intermediate representation for Solidity Code. It has been publicly announced as ``production ready'' in March, 2022, in version 0.8.13 of Solidity. Since then, the engineering team has been encouraging people to compile smart contracts via the usage of Yul, since the optimization focus has shifted on this pseudocode language.
 
 \paragraph*{}
-Yul was designed around four main principles, as described by its official documentation \cite{yul-description}: readability, easy manual inspection of control flow, simple and straightforward generation of bytecode from Yul and whole-program optimization. As compared to bytecode, this IR provides high-level syntax for instructions that introduce jump instructions (\lstinline[columns=fixed]{JUMP, JUMPDEST, JUMPI}), the reasoning behind this being that it is much easier to analyze data flow and control flow in the code.
+Yul was designed around four main principles, as described by its official documentation \cite{yul-description}: readability, easy manual inspection of control flow, simple and straightforward generation of bytecode from Yul and whole-program optimization. As compared to bytecode, this IR provides high-level syntax for instructions that introduce jump instructions (\lstinline[columns=fixed]{JUMP, JUMPDEST, JUMPI}), the reasoning behind this being that it makes analyzing data flow and control flow in the code much easier.
 
 \begin{lstlisting}[caption={Example of Yul code which computes exponentiation recursively}]
 {
@@ -113,7 +113,7 @@ Built by Chao Peng, Sefa Akca and Ajitha Rajan, from University of Edinburgh, SI
     \label{fig:sif-workflow}
 \end{figure}
 
-The drawbacks that this toolkit currently has is that it's outdated and that it does not allow for external users to "plug-in" their own intermediate representations of Solidity code. It acts more as a middle-man, allowing users to implement, through the \emph{visit} method, specific optimization / refactoring items that run against isolated pieces of code. The tool does build a Control Flow Graph for the code, the one that this thesis will focus on, but it does not specifically use it for any kind of in-house optimization - it is just available to the user for usage. However, there are issues of Control Flow Graph completeness. <- TODO aici paper-ul cu completeness
+The drawbacks that this toolkit currently has is that it's outdated and that it does not allow for external users to "plug-in" their own intermediate representations of Solidity code. It acts more as a middle-man, allowing users to implement, through the \emph{visit} method, specific optimization / refactoring items that run against isolated pieces of code. The tool does build a Control Flow Graph for the code, the one that this thesis will focus on, but it does not specifically use it for any kind of in-house optimization - it is just available to the user for usage. However, the completeness of the internal control flow graph is questionable.
 
 \subsection{Slither}
 \paragraph*{}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.25)  19 JUN 2022 18:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.25)  20 JUN 2022 08:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -343,7 +343,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 6.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 6.
-<images//logoFii.png, id=148, 193.47281pt x 188.95593pt>
+<images//logoFii.png, id=140, 193.47281pt x 188.95593pt>
 File: images//logoFii.png Graphic file (type png)
 <use images//logoFii.png>
 Package pdftex.def Info: images//logoFii.png  used on input line 13.
@@ -366,7 +366,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.27 ...ine {4.2.1}Overview}{19}{subsection.4.2.1}
+l.27 ...{5}YUL Optimizer Deep Dive}{22}{chapter.5}
                                                   % [1
 
 ])
@@ -419,12 +419,12 @@ Overfull \hbox (4.83035pt too wide) in paragraph at lines 11--12
 
 ]) [6] (./chapters/chapter1.tex
 Chapter 3.
-<images/solidity_interest.png, id=320, 1162.3425pt x 396.48125pt>
+<images/solidity_interest.png, id=310, 1162.3425pt x 396.48125pt>
 File: images/solidity_interest.png Graphic file (type png)
 <use images/solidity_interest.png>
 Package pdftex.def Info: images/solidity_interest.png  used on input line 12.
 (pdftex.def)             Requested size: 426.79134pt x 145.5826pt.
-<images/dune_analytics_2022.png, id=321, 1447.4075pt x 837.1275pt>
+<images/dune_analytics_2022.png, id=311, 1447.4075pt x 837.1275pt>
 File: images/dune_analytics_2022.png Graphic file (type png)
 <use images/dune_analytics_2022.png>
 Package pdftex.def Info: images/dune_analytics_2022.png  used on input line 19.
@@ -437,32 +437,32 @@ LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 29
  (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [8 <./images/dune_analytics_2022.png>]
-<images/solc_flow.png, id=342, 2794.44pt x 803.0pt>
+<images/solc_flow.png, id=332, 2794.44pt x 803.0pt>
 File: images/solc_flow.png Graphic file (type png)
 <use images/solc_flow.png>
 Package pdftex.def Info: images/solc_flow.png  used on input line 39.
 (pdftex.def)             Requested size: 426.79134pt x 122.63805pt.
  [9 <./images/solc_flow.png>]
-<images/solidity_ast_example.png, id=352, 1126.2075pt x 472.76625pt>
+<images/solidity_ast_example.png, id=342, 1126.2075pt x 472.76625pt>
 File: images/solidity_ast_example.png Graphic file (type png)
 <use images/solidity_ast_example.png>
 Package pdftex.def Info: images/solidity_ast_example.png  used on input line 55.
 (pdftex.def)             Requested size: 426.79134pt x 179.16249pt.
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 73.
  [10 <./images/solidity_ast_example.png>]
-<images/yul_ast_node_types.png, id=365, 3509.11pt x 746.79pt>
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 73.
+<images/yul_ast_node_types.png, id=355, 3509.11pt x 746.79pt>
 File: images/yul_ast_node_types.png Graphic file (type png)
 <use images/yul_ast_node_types.png>
 Package pdftex.def Info: images/yul_ast_node_types.png  used on input line 95.
 (pdftex.def)             Requested size: 455.24411pt x 96.88098pt.
  [11 <./images/yul_ast_node_types.png>]
-<images/sif_workflow.png, id=389, 831.105pt x 268.00125pt>
+<images/sif_workflow.png, id=379, 831.105pt x 268.00125pt>
 File: images/sif_workflow.png Graphic file (type png)
 <use images/sif_workflow.png>
 Package pdftex.def Info: images/sif_workflow.png  used on input line 111.
 (pdftex.def)             Requested size: 426.79134pt x 137.62346pt.
  [12 <./images/sif_workflow.png>]
-<images/slither_architecture.png, id=400, 601.24625pt x 209.78375pt>
+<images/slither_architecture.png, id=389, 601.24625pt x 209.78375pt>
 File: images/slither_architecture.png Graphic file (type png)
 <use images/slither_architecture.png>
 Package pdftex.def Info: images/slither_architecture.png  used on input line 128.
@@ -476,13 +476,13 @@ LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 16
  (/usr/local/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 ) [15]
-<images/cfg_rust_example.png, id=431, 847.165pt x 1267.73625pt>
+<images/cfg_rust_example.png, id=421, 847.165pt x 1267.73625pt>
 File: images/cfg_rust_example.png Graphic file (type png)
 <use images/cfg_rust_example.png>
 Package pdftex.def Info: images/cfg_rust_example.png  used on input line 40.
 (pdftex.def)             Requested size: 426.79134pt x 638.66391pt.
  [16] [17 <./images/cfg_rust_example.png>]
-<images/dag_peephole.png, id=453, 1541.76pt x 770.88pt>
+<images/dag_peephole.png, id=443, 1541.76pt x 770.88pt>
 File: images/dag_peephole.png Graphic file (type png)
 <use images/dag_peephole.png>
 Package pdftex.def Info: images/dag_peephole.png  used on input line 73.
@@ -496,29 +496,29 @@ Underfull \hbox (badness 1231) in paragraph at lines 60--60
 [][][]\OT1/ppl/m/n/10 The cor-re-spond-ing com-mands are [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
  []
 
-<images/optimization_order_ur.png, id=557, 1725.44624pt x 359.3425pt>
+<images/optimization_order_ur.png, id=545, 1725.44624pt x 359.3425pt>
 File: images/optimization_order_ur.png Graphic file (type png)
 <use images/optimization_order_ur.png>
 Package pdftex.def Info: images/optimization_order_ur.png  used on input line 84.
 (pdftex.def)             Requested size: 455.24411pt x 94.80858pt.
-<images/optimization_order_ru.png, id=560, 1721.43124pt x 355.3275pt>
+<images/optimization_order_ru.png, id=548, 1721.43124pt x 355.3275pt>
 File: images/optimization_order_ru.png Graphic file (type png)
 <use images/optimization_order_ru.png>
 Package pdftex.def Info: images/optimization_order_ru.png  used on input line 91.
 (pdftex.def)             Requested size: 455.24411pt x 93.96614pt.
 [24] [25 <./images/optimization_order_ur.png> <./images/optimization_order_ru.png>] [26]
-<images/cfg_control_flow_types.png, id=618, 1278.7775pt x 505.89pt>
+<images/cfg_control_flow_types.png, id=606, 1278.7775pt x 505.89pt>
 File: images/cfg_control_flow_types.png Graphic file (type png)
 <use images/cfg_control_flow_types.png>
 Package pdftex.def Info: images/cfg_control_flow_types.png  used on input line 139.
 (pdftex.def)             Requested size: 284.52756pt x 112.56209pt.
  [27 <./images/cfg_control_flow_types.png>]
-<images/unused_assign_eliminator_termination2.png, id=637, 1426.32875pt x 236.885pt>
+<images/unused_assign_eliminator_termination2.png, id=625, 1426.32875pt x 236.885pt>
 File: images/unused_assign_eliminator_termination2.png Graphic file (type png)
 <use images/unused_assign_eliminator_termination2.png>
 Package pdftex.def Info: images/unused_assign_eliminator_termination2.png  used on input line 186.
 (pdftex.def)             Requested size: 455.24411pt x 75.60594pt.
-<images/basic_block_termination_ast_example.png, id=638, 3276.24pt x 1648.1575pt>
+<images/basic_block_termination_ast_example.png, id=626, 3276.24pt x 1648.1575pt>
 File: images/basic_block_termination_ast_example.png Graphic file (type png)
 <use images/basic_block_termination_ast_example.png>
 Package pdftex.def Info: images/basic_block_termination_ast_example.png  used on input line 196.
@@ -529,7 +529,7 @@ Overfull \hbox (1.90599pt too wide) in paragraph at lines 202--203
  []
 
 [29 <./images/unused_assign_eliminator_termination2.png> <./images/basic_block_termination_ast_example.png>]
-<images/unused_assign_eliminator_handle_termination_flow.png, id=675, 1414.28375pt x 631.35875pt>
+<images/unused_assign_eliminator_handle_termination_flow.png, id=663, 1414.28375pt x 631.35875pt>
 File: images/unused_assign_eliminator_handle_termination_flow.png Graphic file (type png)
 <use images/unused_assign_eliminator_handle_termination_flow.png>
 Package pdftex.def Info: images/unused_assign_eliminator_handle_termination_flow.png  used on input line 213.
@@ -538,37 +538,29 @@ Package pdftex.def Info: images/unused_assign_eliminator_handle_termination_flow
 Chapter 6.
 ) [32
 
-] (./chapters/conclusions.tex [33]) (./chapters/bibliography.tex
-Overfull \hbox (50.33495pt too wide) in paragraph at lines 6--3
-\OT1/ppl/m/n/12 still un-der heavy de-vel-op-ment. https://www.overleaf.com/project/627ab6f7ebec3330916a293b
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 6--3
-
- []
-
-[34
+] (./chapters/conclusions.tex [33]
+Chapter 7.
+) (./chapters/bibliography.tex [34
 
 ]) [35
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 8F8F15E7FEBCD085E76F7016334023FB;5818.
+(rerunfilecheck)             Checksum: A11645D542319D45FD35B23EAAD1B90A;5597.
  ) 
 Here is how much of TeX's memory you used:
- 12872 strings out of 478268
- 201218 string characters out of 5846347
- 650281 words of memory out of 5000000
- 30555 multiletter control sequences out of 15000+600000
+ 12870 strings out of 478268
+ 201197 string characters out of 5846347
+ 650326 words of memory out of 5000000
+ 30554 multiletter control sequences out of 15000+600000
  489286 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,8n,63p,1132b,1939s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 60i,8n,63p,1132b,1895s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (40 pages, 2785379 bytes).
+Output written on main.pdf (40 pages, 2786108 bytes).
 PDF statistics:
- 848 PDF objects out of 1000 (max. 8388607)
- 740 compressed objects within 8 object streams
- 310 named destinations out of 1000 (max. 500000)
- 369 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 839 PDF objects out of 1000 (max. 8388607)
+ 731 compressed objects within 8 object streams
+ 309 named destinations out of 1000 (max. 500000)
+ 353 words of extra memory for PDF output out of 10000 (max. 10000000)
 

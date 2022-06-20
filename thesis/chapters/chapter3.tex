@@ -57,7 +57,7 @@ When optimized, however, gas usage is almost four times better, with \\ \lstinli
     dhfoDgvulfnTUtnIf[xa[r]EscLMcCTUtTOntnfDIulLculVcul [j]Tpeulxa[rul]xa[r]cLgvifCTUca[r]LSsTFOtfDnca[r]Iulc]jmul[jul] VcTOcul jmul
 \end{lstlisting}
 
-In the above order, the optimizers between brackets \cite[will be applied multiple times in a loop until the Yul code remains unchanged or until the maximum number of rounds (currently 12)]{solidity-yul-optimizer}. We can immediately see that some of the optimizers are run more than once, the reasoning being that each optimizer may change the YUL IR, therefore giving new optimization opportunities to other optimizer. This is the case for UnusedAssignEliminator (r abbreviation) and UnusedPruner (u abbreviation). For example, let's optimize the following code in 2 rounds, first applying UnusedPruner and then UnusedAssignEliminator, then applying UnusedAssignEliminator and then UnusedPruner \footnote{The corresponding commands are \lstinline[columns=fixed]{solc --optimize --ir-optimized --via-ir --yul-optimizations 'ur' termination.sol} and \lstinline[columns=fixed]{solc --optimize --ir-optimized --via-ir --yul-optimizations 'ru' termination.sol}}:
+In the above order, the optimizers between brackets \cite[will be applied multiple times in a loop until the Yul code remains unchanged or until the maximum number of rounds (currently 12)]{solidity-yul-optimizer}. We can immediately see that some of the optimizers are run more than once, the reasoning being that each optimizer may change the YUL IR, therefore giving new optimization opportunities to other steps. This is the case for UnusedAssignEliminator (r abbreviation) and UnusedPruner (u abbreviation). For example, let's optimize the following code in 2 rounds, first applying UnusedPruner and then UnusedAssignEliminator, then applying UnusedAssignEliminator and then UnusedPruner \footnote{The corresponding commands are \lstinline{solc --optimize --ir-optimized --via-ir --yul-optimizations 'ur' termination.sol} and \lstinline{solc --optimize --ir-optimized --via-ir --yul-optimizations 'ru' termination.sol}}:
 
 
 \label{code:solidity-redundant-assignment}
@@ -101,7 +101,7 @@ In the above figures \ref{fig:optimization-order-ru} \ref{fig:optimization-order
 If, however, UnusedAssignEliminator is run first, it removes the same assignments (\lstinline[columns=fixed]{var_balance := zero_uint256} and \lstinline[columns=fixed]{var_balance := _4}), but then gives more room for UnusedPruner to act. Therefore, all of the variable declarations get removed, since their values are not used and they are redundant.
 
 \paragraph*{}
-While this is a proof-of-concept example, optimizer steps frequently generate intermediary data objects (such as the SSATransform) to make local optimizations safe and possible (remember that corectness comes before optimization). Hence why these two optimizers are simple, yet effective.
+While this is a proof-of-concept example, optimizer steps frequently generate intermediary data objects (such as the SSATransform) to make local optimizations safe and possible (corectness comes before optimization). Hence why these two optimizers are simple, yet effective.
 
 \section{UnusedPruner. UnusedAssignEliminator.}
 \paragraph*{}

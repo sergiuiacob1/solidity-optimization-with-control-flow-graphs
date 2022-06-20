@@ -1,66 +1,23 @@
 \chapter*{Draft} 
 \addcontentsline{toc}{chapter}{Draft}
 
-\section{Local optimizations}
-Optimizing for loops.
-
-% \begin{lstlisting}[language=bash]
-% sergiuiacob@Sergius-MacBook-Pro dataset % solhint variable_declaration_loops.sol
-
-% \end{lstlisting}
-
-% solhint outputs nothing – it sees no issues
-
-% nor does solium (eth lint)
-
-% ^ nu mai stiu daca asta e valabil
 
 
-% \begin{lstlisting}[language=bash]
-% sergiuiacob@Sergius-MacBook-Pro dataset % solium -f variable_declaration_loops.sol
-
-% No issues found.
-
-% sergiuiacob@Sergius-MacBook-Pro dataset % solium -f variable_declaration_if.sol
-
-% No issues found.
-
-% \end{lstlisting}
-
-
-
-
-
-
+First of all – am incurcat "leave" cu "terminate" in teza. Ajusteaza "termination flows"
 
 
 TODOs
 * test cu persistent var
 * TODO ce se intampla daca am acelasi assignment si in outer scope, si in block scope?
 * acelasi gen aceeasi_var = aceeasi_val
-* pe termination3.sol
-  * exemplu ce se intampla cand rulez doar 'Dru'
-  * exemplu cum se simplifica si mai mult (datorita static analysis) cand rulez toata suita de optimizatori
-* \textwidth in loc de 15cm
-
-
-  https://dune.com/hagaetc/contracts-deployed-on-ethereum-per-month
-  ^ de scris cat USD costa sa dai deploy la niste contracte si cat de multe sunt.
-
-
-Important
-* In YUL IR, pot fi instructiuni dupa o instructiune de leave!!!
-  * Rezolvat de DeadCodeEliminator
-* NU SCOATE assign-ment-urile pentru state variables!!!
-
 
 Resurse utile
 * tips n tricks cu YULs, poate e ceva de folos: https://hackmd.io/@gn56kcRBQc6mOi7LCgbv1g/rJez8O8st
 * https://homepages.dcc.ufmg.br/~fernando/classes/dcc888/ementa/
 * https://etherscan.io/contractsVerified
-  * statistici cu cat \% din contracte folosesc solc 0.8
 * tool vizualizare relatii functii din contracte https://piet.blockchains.com/?container=examples%2Fexport1562664060589.piet.json 
 * https://cs.au.dk/~amoeller/spa/spa.pdf
+* http://www.r-5.org/files/books/computers/compilers/writing/Keith_Cooper_Linda_Torczon-Engineering_a_Compiler-EN.pdf
 
 
 De adaugat in teza
@@ -78,23 +35,14 @@ De adaugat in teza
 
 
 De adaugat in prezentare
-* Solidity Summit 2022 – merge la bibliografie I guess.
-* https://meet.ethereum.org/solidity – asking questions here. How to make a difference?
-* Scheme
-  * optimization pipeline (cod solidity -> YUL IR -> YUL optimizer -> EVM Bytecode -> EVM Optimizer (LLVM???) -> bytecode)
 * Ce este un dialect. Despre EVM Dialect (folosit de Yul IR)
-* cum functioneaza UAE: in documentatie scrie https://docs.soliditylang.org/en/v0.8.14/internals/optimizer.html#redundantassigneliminator
 * Despre ce e un AST. Solidity foloseste ANTLR – https://medium.com/@obernardovieira/why-is-ast-so-important-b1e7d6c29260
 Proces dezvoltare dizertatie
-* Problema: se lucra deja la multe dintre contributiile pe care le consideram sa le fac in solidity de persoane random. trebuia sa gasesc un "free slot" la lucrat la ceva
-* Cat de mult ajuta UAE? Experiment cu deployment pt un contract, o functie simpla. Cu si fara optimizarea UAE. DOAR CU ACEEEA!!! Cat gaz se salveaza?
 * Am vrut sa imbunatatesc UAE pe AST-ul de pe Solidity – dar dupa o discutie cu echipa Solidity, mi-au clarificat ca optimizarile ar trebui facute pe YUL IR – care are si el un AST, doar ca nu e outputted, e in code base ---> mai dificil
 * https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.453.4245&rep=rep1&type=pdf 
 * Fuzzing tests – trying to break the compiler with Etherscan
 * default optimization suite de fapt nu e aia prezentata in documentatie – e outdated
   * 'dhfoDgvulfnTUtnIf[xa[r]EscLMcCTUtTOntnfDIulLculVcul [j]Tpeulxa[rul]xa[r]cLgvifCTUca[r]LSsTFOtfDnca[r]Iulc]jmul[jul] VcTOcul jmul'
-  * asta pare sa fie... printre altele
-* Si in teza, si in prezentare!!! Graf cu dependintele intre optimizatori din suita. De explicat de ce s-ar putea sa ajute improvement-urile mele. Nu-s doar standalone improvements, s-ar putea sa dea oportunitati si pt alti optimizatori
 
 Random stuff
   * https://hrkrshnn.com/ prezentari
@@ -115,7 +63,6 @@ Random stuff
   * alte moduri in care lumea interpreteaza cod solidity, ex asta cu XML-uri ca sa foloseasca query-uri XPath apoi https://orbilu.uni.lu/bitstream/10993/35862/3/smartcheck-paper.pdf
 
 
-
 Misc stuff
 * adaugat screenshot cu llvm-opt --help (optimizarile pe care le poate face)
 * de vorbit despre ce e "--optimize-runs" (scrie in doc oficial). trade off intre code size / code efficiency
@@ -124,59 +71,4 @@ Misc stuff
 * Issues gasite in timp ce lucram la dizertatie
   * cand se construieste AST (--ast-compact-json), la pgrama valoarea pentru "src" nu e corecta, gen de unde pana unde tine codul pt pragma directive
 * de folosit un tool online si de aratat cum functioneaza UAE (solc --optimize --ir-optimized --via-ir --yul-optimizations 'r'  termination.sol | pbcopy), o data cu '' si o data cu 'r'    –   https://text-compare.com/
-
-Proprietati noduri CFG
-* The	flow	of	control	can	only	
-enter	the	basic	block	through	
-the	first	instruction	in	the	
-block.
-
-Proprietati pentru solidity optimizer (on YUL)
-* Disambiguatorul seteaza unique names pt fiecare functie / variabila
-* loop related optimizations
-  * stop condition is moved into the loop body
-  * loop initialization body is moved before the loop
-  * majoritatea optimizarilor listate in documentatia oficiala (0.8.14) graviteaza in jurul precalcularii constantelor si propagarii acestora
-
-
-
-Idei cu ce pot face
-* CFG intre contracte?
-* diferite rezolutii CFG
-* vizualizare CFG (graphviz?)
-* dead code elimination (https://homepages.dcc.ufmg.br/~fernando/classes/dcc888/ementa/slides/ControlFlowGraphs.pdf)
-  * ca pas intr-un CI
-* izolarea codului – cred ca daca iau toate variabilele si le izolez (gen ce e folosit intr-un if sa fie definit acolo) etc. atunci o sa consume mai putin gas
-* pentru a-mi testa softul: idei in capitolul 8.1 din https://eprints.ucm.es/id/eprint/61812/1/HERNANDEZ_CEREZO_Tecnicas_de_analisis_para_contratos_inteligentes_generacion_de_grafos_de_control_de_flujo_completos_4398577_720285146.pdf
-* ma pot intepa in StructuralSimplifier + Dataflow Analyzer deja existente in solc
-
-Optimizari deja facute de solc
-* LoopInvariantCodeMotion – ce vreau eu sa fac de fapt https://docs.soliditylang.org/en/v0.8.14/internals/optimizer.html#loopinvariantcodemotion
-  * "variable declarations inside conditional branches will not be moved out of the loop" <- posibilitate de improvement
-* Local common subexpression eliminator
-* citat din doc oficial: "specializes or inlines functions" (probabil on in loc de or)
-  * todo aici, de aratat un exemplu pe YUL direct, inlined vs uninlined (--optimize --ir-optimized versus --ir)
-
-
-Tipuri de optimizari
-* local optimizations – in interiorul unui basic block
-
-Pentru prezentare, Proof of Concept:
-* programul meu intr-un CI care propune optimizari la PR-uri pentru cod ;)
-
-
-How does LLVM work? Let's take that for example
-* Virtual Register Allocation (ca exemplu)
-https://homepages.dcc.ufmg.br/~fernando/classes/dcc888/ementa/slides/ControlFlowGraphs.pdf
-
-
-
-
-
-Solidity is a relatively new technology, when compared to already existing programming languages widely used in the market. As stated by the Solidity team itself, "the optimizer is under heavy development" \cite{solidity-optimizer}, which gives plenty of room for contributors to bring their own performance enhancements.
-
-I plan on being one of those contributors, starting from the Solidity code and the AST built by the Solidity compiler itself. I will then evaluate the given inputs and focus on building a specific, low resolution Control Flow Graph, by which memory allocation and cpu cycles can be thoroughly inspected. This would allow for a technical deep dive into the insides of an Ethereum smart contract, which in return can provide useful insights to the user as to how the code can be optimized.
-
-As compared to the other existing tools, this thesis will focus on the latest stable version of Solidity (0.8) and will be built around a set principles focused on scalable, maintainable code analysis tools. Security will also not be the main concern, as there is already plenty of interest in that area.
-
 
